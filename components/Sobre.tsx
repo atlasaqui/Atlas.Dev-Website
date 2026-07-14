@@ -22,8 +22,8 @@ export default function Sobre() {
           <div className="space-y-4 text-text1/85 leading-relaxed">
             <p>
               Oi! Sou <strong>Victor Monteiro</strong>, mas no universo digital me chamo{' '}
-              <strong>atlas.dev</strong>. Formado em <strong>Design de Animação</strong> e cursando{' '}
-              <strong>Sistemas para Internet na UNICAP</strong>, minha trajetória é intencionalmente
+              <strong>atlas</strong>. Formado em <strong>Design de Animação</strong> e cursando{' '}
+              <strong>Sistemas para Internet na UNICAP</strong>, minha trajetória é
               híbrida — aprendi a compor imagens antes de aprender a compilar código.
             </p>
             <p>
@@ -33,7 +33,7 @@ export default function Sobre() {
             </p>
             <p>
               No meu tempo livre você me encontra na academia treinando, jogando, maratonando anime
-              ou assistindo terror às 2 da manhã sem me arrepender nem um segundo. Tenho uma
+              ou assistindo terror. Tenho uma
               cachorrinha chamada <strong>Kaori</strong> — homenagem direta a{' '}
               <em>Your Lie in April</em>, que me partiu emocionalmente do melhor jeito possível.
             </p>

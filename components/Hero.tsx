@@ -70,7 +70,7 @@ export default function Hero() {
             <p className="text-text2 max-w-xl mb-8 leading-relaxed">
               Desenvolvedor front-end e designer híbrido — formação em Design de Animação e
               fundamentado em Sistemas para Internet. Construo interfaces com Next.js, TypeScript
-              e Tailwind que unem lógica de código com direção de arte, do Figma ao deploy.
+              e Tailwind que unem lógica de código com direção de arte.
             </p>
           </Reveal>
 
@@ -129,12 +129,11 @@ export default function Hero() {
             <p className="text-sm text-text2 mb-4">UNIAESO — Centro Universitário AESO-Barros Melo</p>
             <p className="text-sm text-text1/85 mb-3 leading-relaxed">
               Foi no Design de Animação que aprendi a <strong>pensar em sistemas visuais</strong> —
-              motion, composição, linguagem de arte. Esse background é o que torna meu front-end
-              diferente: cada interface carrega intenção visual de quem estudou como o olho humano
-              lê imagens.
+              motion, composição, linguagem de arte. Essa é uma parte da história que torna meu front-end
+              diferente.
             </p>
             <p className="text-sm text-text1/85 mb-6 leading-relaxed">
-              Hoje curso <strong>Sistemas para Internet na UNICAP</strong> — então trabalho com a lógica do back-end junto com a alma criativa do design.
+              Hoje curso <strong>Sistemas para Internet na UNICAP</strong> — então apesar de ter um foco maior no front eu também trabalho com a lógica do back-end.
             </p>
             <a
               href="/ASSETS/Diploma/victor_william_monteiro_da_rocha_curso_tecnologico_em_design_de_animacao (1).pdf"
