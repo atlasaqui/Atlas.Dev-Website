@@ -21,10 +21,10 @@ export default function Sobre() {
 
           <div className="space-y-4 text-text1/85 leading-relaxed">
             <p>
-              Oi! Sou <strong>Victor Monteiro</strong>, mas no universo digital me chamo{' '}
+              Oi! Sou <strong>Victor Monteiro</strong>, mas no digital me chamo{' '}
               <strong>atlas</strong>. Formado em <strong>Design de Animação</strong> e cursando{' '}
-              <strong>Sistemas para Internet na UNICAP</strong>, minha trajetória é
-              híbrida — aprendi a compor imagens antes de aprender a compilar código.
+              <strong>Sistemas para Internet na UNICAP</strong>, meu caminho é
+              híbrido — aprendi a compor imagens antes de codar.
             </p>
             <p>
               Sou genuinamente apaixonado pelo que faço. Tecnologia e arte não são disciplinas
@@ -35,7 +35,7 @@ export default function Sobre() {
               No meu tempo livre você me encontra na academia treinando, jogando, maratonando anime
               ou assistindo terror. Tenho uma
               cachorrinha chamada <strong>Kaori</strong> — homenagem direta a{' '}
-              <em>Your Lie in April</em>, que me partiu emocionalmente do melhor jeito possível.
+              <em>Your Lie in April</em>
             </p>
           </div>
 

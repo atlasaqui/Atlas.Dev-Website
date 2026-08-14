@@ -32,7 +32,14 @@ export const PROJECTS: Project[] = [
     thumb: '/ASSETS/BodeDoNo/cover.png',
     palette: ['#475C1B', '#F7EEDA', '#FBB03B', '#2E3C11'],
     gradient: 'linear-gradient(135deg,#1c2308,#3d4f17)',
-    links: [{ label: 'Visitar site ↗', href: 'https://bode-do-no.vercel.app/', kind: 'view' }],
+    links: [
+      { label: 'Visitar site ↗', href: 'https://bode-do-no.vercel.app/', kind: 'view' },
+      {
+        label: 'Figma ↗',
+        href: 'https://www.figma.com/design/3vubJydc4JRA7WVw9IeIf7/Bode-do-N%C3%B4---Website-Reimagination?node-id=3-1514&t=oP4NWtUcfqbnlJhd-1',
+        kind: 'figma'
+      }
+    ],
     images: [
       { src: '/ASSETS/BodeDoNo/cover.png', caption: 'Projeto final' },
       { src: '/ASSETS/BodeDoNo/wireframe.png', caption: 'Wireframe' }
@@ -80,7 +87,13 @@ export const PROJECTS: Project[] = [
     thumb: '/ASSETS/Contratas/1.png',
     palette: ['#7B2FBE', '#FF6B35', '#FFD93D', '#0D0D1A'],
     gradient: 'linear-gradient(135deg,#0d001a,#2a0057)',
-    links: [],
+    links: [
+      {
+        label: 'Figma ↗',
+        href: 'https://www.figma.com/design/hSr45dNn8729POKBppWPbU/HireUp?node-id=77-2653&t=bKZ7NBJac0adfbl9-1',
+        kind: 'figma'
+      }
+    ],
     images: [
       { src: '/ASSETS/Contratas/1.png', caption: 'Tela 01' },
       { src: '/ASSETS/Contratas/2.png', caption: 'Tela 02' },
@@ -190,6 +203,8 @@ export const BODE_DO_NO = {
     'Site institucional construído do zero como centerpiece de portfólio — Header com scroll detection, Hero com efeito de grain em canvas, seções de Promo, Unidades, Eventos e Contato, headers de segurança HTTP e middleware.',
   tags: ['Next.js 14', 'TypeScript', 'Tailwind'],
   liveUrl: 'https://bode-do-no.vercel.app/',
+  figmaUrl:
+    'https://www.figma.com/design/3vubJydc4JRA7WVw9IeIf7/Bode-do-N%C3%B4---Website-Reimagination?node-id=3-1514&t=oP4NWtUcfqbnlJhd-1',
   // Coloque aqui a imagem do projeto e o wireframe em /public/ASSETS/BodeDoNo/
   coverImage: '/ASSETS/BodeDoNo/cover.png',
   wireframeImage: '/ASSETS/BodeDoNo/wireframe.png',
@@ -252,8 +267,7 @@ export const SKILLS = {
     { name: 'Godot', color: 'rgba(68,170,255,.12)' },
     { name: 'Git', color: 'rgba(240,80,51,.12)' },
     { name: 'GitHub', color: 'rgba(255,255,255,.10)' },
-    { name: 'VS Code', color: 'rgba(0,122,204,.12)' },
-    { name: 'Power Pages', color: 'rgba(0,120,212,.12)' }
+    { name: 'VS Code', color: 'rgba(0,122,204,.12)' }
   ]
 };
 

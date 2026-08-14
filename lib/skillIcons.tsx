@@ -26,7 +26,6 @@ import {
   PenTool,
   Layers,
   Code2,
-  Globe,
   BarChart3,
   Component,
   LayoutGrid,
@@ -75,8 +74,7 @@ export const SKILL_ICONS: Record<string, IconType> = {
   Godot: SiGodotengine,
   Git: SiGit,
   GitHub: SiGithub,
-  'VS Code': Code2,
-  'Power Pages': Globe
+  'VS Code': Code2
 };
 
 // ícones de marca que ficam melhor sem "encolher" a cor original
@@ -133,6 +131,5 @@ export const SKILL_DESCRIPTIONS: Record<string, string> = {
   Godot: 'Engine de jogos open-source — usada nos meus projetos pessoais.',
   Git: 'Controle de versão — histórico e branches de todo projeto sério.',
   GitHub: 'Hospedagem dos repositórios, colaboração e portfólio de código aberto.',
-  'VS Code': 'Editor de código do dia a dia — onde tudo isso vira produto.',
-  'Power Pages': 'Plataforma da Microsoft pra portais corporativos com Dataverse e Liquid.'
+  'VS Code': 'Editor de código do dia a dia — onde tudo isso vira produto.'
 };

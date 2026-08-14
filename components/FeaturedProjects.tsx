@@ -10,11 +10,13 @@ import Lightbox from './Lightbox';
 import { BODE_DO_NO, PROJECTS } from '@/lib/data';
 
 const bfr = PROJECTS.find((p) => p.key === 'bfr')!;
+const contratas = PROJECTS.find((p) => p.key === 'contratas')!;
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function FeaturedProjects() {
   const [bodeOpen, setBodeOpen] = useState(false);
   const [bfrOpen, setBfrOpen] = useState(false);
+  const [contratasOpen, setContratasOpen] = useState(false);
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null);
 
   return (
@@ -86,6 +88,16 @@ export default function FeaturedProjects() {
                         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm2 border border-border1 text-sm hover:border-bode-gold/60 transition-colors"
                       >
                         Visitar site <ExternalLink size={14} />
+                      </a>
+                    )}
+                    {BODE_DO_NO.figmaUrl && (
+                      <a
+                        href={BODE_DO_NO.figmaUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm2 border border-border1 text-sm hover:border-bode-gold/60 transition-colors"
+                      >
+                        Ver no Figma <ExternalLink size={14} />
                       </a>
                     )}
                   </div>
@@ -235,6 +247,107 @@ export default function FeaturedProjects() {
               </div>
             </div>
           </Reveal>
+
+          {/* ============ CONTRATAS ============ */}
+          <Reveal direction="left">
+            <div className="relative overflow-hidden rounded-lg2 border border-[#7B2FBE]/30 bg-[#0D0D1A]">
+              <div
+                className="absolute inset-0 -z-10"
+                style={{
+                  background:
+                    'radial-gradient(ellipse at 20% 20%, rgba(123,47,190,.28), transparent 55%), radial-gradient(ellipse at 90% 80%, rgba(255,107,53,.16), transparent 50%)'
+                }}
+                aria-hidden="true"
+              />
+              <div
+                className="faixa bg-gradient-to-r from-[#7B2FBE] to-[#FF6B35] text-white font-bold"
+                aria-hidden="true"
+              >
+                EdTech Gamificada
+              </div>
+
+              <div className="grid md:grid-cols-[1.05fr_.95fr] gap-0">
+                {/* text side */}
+                <div className="p-8 sm:p-12 flex flex-col justify-center">
+                  <span className="text-xs font-mono text-[#FFD93D] mb-4 tracking-widest">
+                    {'// EDTECH · GAMIFICAÇÃO · UI/UX'}
+                  </span>
+                  <h3 className="font-heading text-4xl sm:text-5xl leading-[1.05] mb-5 text-white">
+                    <span className="text-[#FF6B35]">Con</span><span className="text-[#2F80ED]">tratas</span>
+                  </h3>
+                  <p className="text-sm sm:text-[15px] text-text2 leading-relaxed mb-6 max-w-md">
+                    {contratas.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mb-8">
+                    {contratas.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="text-[11px] px-2.5 py-1 rounded-full border border-[#7B2FBE]/40 text-[#c9a3ff]"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <motion.button
+                      onClick={() => setContratasOpen(true)}
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.97 }}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm2 bg-gradient-to-r from-[#7B2FBE] to-[#FF6B35] text-white text-sm font-semibold shadow-[0_0_30px_rgba(123,47,190,.35)] hover:shadow-[0_0_40px_rgba(123,47,190,.5)] transition-shadow"
+                    >
+                      Ver Frames Completos
+                      <ArrowUpRight size={15} />
+                    </motion.button>
+                    {contratas.links
+                      .filter((l) => l.kind === 'figma')
+                      .map((l) => (
+                        <a
+                          key={l.label}
+                          href={l.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-sm2 border border-border1 text-sm hover:border-[#7B2FBE]/60 transition-colors"
+                        >
+                          Ver no Figma <ExternalLink size={14} />
+                        </a>
+                      ))}
+                  </div>
+                </div>
+
+                {/* visual side — neon tilted trio */}
+                <div className="relative min-h-[320px] sm:min-h-[420px] flex items-center justify-center py-10">
+                  {contratas.images.slice(0, 3).map((img, i) => {
+                    const layout = [
+                      { rot: -10, x: -70, scale: 0.86, z: 1 },
+                      { rot: 0, x: 0, scale: 1, z: 3 },
+                      { rot: 10, x: 70, scale: 0.86, z: 2 }
+                    ][i];
+                    return (
+                      <motion.button
+                        type="button"
+                        key={img.src}
+                        onClick={() => setLightbox({ src: img.src, alt: img.caption })}
+                        initial={{ opacity: 0, y: 24 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        whileHover={{ rotate: 0, scale: layout.scale * 1.06, zIndex: 10 }}
+                        transition={{ duration: 0.55, delay: i * 0.08, ease: EASE }}
+                        style={{
+                          rotate: layout.rot,
+                          x: layout.x,
+                          zIndex: layout.z
+                        }}
+                        className="absolute w-[150px] sm:w-[190px] aspect-[9/16] rounded-md2 overflow-hidden border-2 border-[#7B2FBE]/50 shadow-[0_0_30px_rgba(123,47,190,.35)] focus-visible:ring-2 focus-visible:ring-[#7B2FBE]"
+                        aria-label={`Ampliar ${img.caption}`}
+                      >
+                        <Image src={img.src} alt={img.caption} fill className="object-cover" />
+                      </motion.button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
 
@@ -276,9 +389,19 @@ export default function FeaturedProjects() {
             href={BODE_DO_NO.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-6 px-5 py-2.5 rounded-sm2 bg-red-grad text-white text-sm font-medium"
+            className="inline-block mt-6 mr-3 px-5 py-2.5 rounded-sm2 bg-red-grad text-white text-sm font-medium"
           >
             Visitar o site ↗
+          </a>
+        )}
+        {BODE_DO_NO.figmaUrl && (
+          <a
+            href={BODE_DO_NO.figmaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-6 px-5 py-2.5 rounded-sm2 border border-border1 text-sm font-medium hover:border-bode-gold/60 transition-colors"
+          >
+            Ver no Figma ↗
           </a>
         )}
       </Modal>
@@ -288,6 +411,29 @@ export default function FeaturedProjects() {
         <div className="grid sm:grid-cols-2 gap-4">
           {bfr.images.map((img) => (
             <button key={img.src} onClick={() => setLightbox({ src: img.src, alt: img.caption })}>
+              <div className="relative w-full aspect-video rounded-md2 overflow-hidden bg-bg">
+                <Image src={img.src} alt={img.caption} fill className="object-cover" />
+              </div>
+              <p className="text-xs text-text2 mt-2">{img.caption}</p>
+            </button>
+          ))}
+        </div>
+      </Modal>
+
+      {/* CONTRATAS MODAL */}
+      <Modal
+        open={contratasOpen}
+        onClose={() => setContratasOpen(false)}
+        title={contratas.title}
+        subtitle={contratas.subtitle}
+      >
+        <div className="grid sm:grid-cols-2 gap-4">
+          {contratas.images.map((img) => (
+            <button
+              key={img.src}
+              onClick={() => setLightbox({ src: img.src, alt: img.caption })}
+              className={img.wide ? 'sm:col-span-2' : ''}
+            >
               <div className="relative w-full aspect-video rounded-md2 overflow-hidden bg-bg">
                 <Image src={img.src} alt={img.caption} fill className="object-cover" />
               </div>
