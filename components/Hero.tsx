@@ -68,7 +68,7 @@ export default function Hero() {
 
           <Reveal delay={0.15}>
             <p className="text-text2 max-w-xl mb-8 leading-relaxed">
-              Desenvolvedor front-end e designer híbrido — formação em Design de Animação e
+              Desenvolvedor FullStack e UI/UX Designer — formação em Design de Animação e
               fundamentado em Sistemas para Internet. Construo interfaces com Next.js, TypeScript
               e Tailwind que unem lógica de código com direção de arte.
             </p>
