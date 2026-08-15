@@ -7,7 +7,7 @@ Full-Stack Dev · UI/UX Designer · Game Art Director
 
 *Eu transformo visão criativa em produto real.*
 
-[Ver o site ↗](https://atlasaquidev.vercel.app/) · [Ver no Figma / Projetos ↗](https://github.com/atlasaqui) · [LinkedIn ↗](https://www.linkedin.com/in/atlasaqui/)
+[Ver o site ↗](https://atlasaquidev.vercel.app/) · [Ver no Figma ↗](https://www.figma.com/design/2UtdxO0LT8r2wEVFJQK11n/Atlas---Portifolio?node-id=0-1&t=7fTmvlaKDic5RSQ1-1) · [GitHub ↗](https://github.com/atlasaqui) · [LinkedIn ↗](https://www.linkedin.com/in/atlasaqui/)
 
 </div>
 
@@ -24,13 +24,13 @@ Full-Stack Dev · UI/UX Designer · Game Art Director
 
 ## // Sobre
 
-Este repositório é o código-fonte do meu portfólio pessoal: **atlas.dev**. Não é um template genérico — é a versão em produto do meu processo real como desenvolvedor front-end e designer de UI/UX, migrada de HTML/CSS/JS vanilla para uma stack moderna sem perder a identidade visual punk/cyberpunk que sempre esteve na base.
+Este repositório é o código-fonte do meu portfólio pessoal: **atlas.dev**. Não é um template genérico — é a versão em produto do meu processo real como desenvolvedor front-end e designer de UI/UX, migrada de HTML/CSS/JS vanilla para uma stack moderna sem perder a identidade visual punk/cyberpunk que sempre esteve na base da marca.
 
 O portfólio reúne três frentes do meu trabalho:
 
 - **Front-End** — Next.js, TypeScript, Tailwind e Framer Motion aplicados com atenção a performance, responsividade e microinterações.
 - **UI/UX** — sistemas de design, wireframes, arquitetura de informação e testes de usabilidade, documentados caso a caso no Figma.
-- **Tech UI/UX (Games)** — UI/UX de jogos ponta a ponta em estúdio: do design no Figma à implementação e animação em Unity (Unity).
+- **Tech UI/UX (Games)** — UI/UX de jogos ponta a ponta em estúdio: do design no Figma à implementação e animação em Unity (Unity/Godot).
 
 Formado em **Design de Animação** e atualmente cursando **Sistemas para Internet (UNICAP)**, meu diferencial é justamente esse: penso em composição, motion e sistemas visuais antes de pensar em componente. O código é a segunda etapa, não a primeira.
 
@@ -51,6 +51,8 @@ Formado em **Design de Animação** e atualmente cursando **Sistemas para Intern
 ---
 
 ## // Sistema de design
+
+[Ver design completo no Figma ↗](https://www.figma.com/design/2UtdxO0LT8r2wEVFJQK11n/Atlas---Portifolio?node-id=0-1&t=7fTmvlaKDic5RSQ1-1)
 
 A identidade visual segue a linguagem **punk/cyberpunk** que dá nome ao site — tipografia agressiva (Liber-Struct, Grave), fundo escuro e um gradiente de destaque usado em CTAs, links ativos e elementos de ênfase:
 
