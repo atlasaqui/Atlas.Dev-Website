@@ -10,7 +10,7 @@ const paths = {
   flow: "M2 27H24L32 13H56L65 27H98",
   motion: "M2 25C20 3 30 39 48 19S78 2 98 23",
   signature: "M3 29C21 6 30 43 49 17S71 13 82 20L97 13",
-  assemble: "M3 5H35V34H3Z M55 5H87Q97 5 97 15V24Q97 34 87 34H55Z M35 20H55",
+  assemble: "M1 21H99",
   invite: "M3 31H65Q80 31 80 17V6 M68 16L80 4L92 16",
 };
 
@@ -51,14 +51,23 @@ export function SectionHeading({
       {inline ? " " : <br />}
       <em className="heading-accent">
         {accent}
-        <svg
-          className="heading-trace"
-          viewBox="0 0 100 42"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path d={paths[theme]} pathLength="1" />
-        </svg>
+        {theme === "curate" ? (
+          <span className="heading-frame" aria-hidden="true">
+            <i />
+            <i />
+          </span>
+        ) : theme === "assemble" ? (
+          <span className="heading-rule" aria-hidden="true" />
+        ) : (
+          <svg
+            className="heading-trace"
+            viewBox="0 0 100 42"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d={paths[theme]} pathLength="1" />
+          </svg>
+        )}
       </em>
     </motion.h2>
   );

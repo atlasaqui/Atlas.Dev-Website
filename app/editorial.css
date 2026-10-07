@@ -2606,10 +2606,48 @@ main:focus {
   stroke-dashoffset: 1;
   opacity: 0;
 }
-.heading-curate .heading-trace {
-  inset: -0.06em -0.06em;
-  width: calc(100% + 0.12em);
-  height: calc(100% + 0.12em);
+.heading-frame {
+  position: absolute;
+  inset: -0.02em -0.22em -0.12em -0.12em;
+  pointer-events: none;
+  opacity: 0;
+}
+.heading-frame i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0.3em;
+  border-block: 1px solid var(--accent);
+}
+.heading-frame i:first-child {
+  left: 0;
+  border-left: 1px solid var(--accent);
+}
+.heading-frame i:last-child {
+  right: 0;
+  border-right: 1px solid var(--accent);
+}
+.heading-playing .heading-frame {
+  animation: frame-intention 1.25s var(--ease) both;
+}
+@keyframes frame-intention {
+  0% {
+    opacity: 0;
+    transform: scale(1.035);
+  }
+  35%,
+  75% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+}
+.heading-assemble .heading-trace {
+  bottom: -0.14em;
+  height: 3px;
 }
 .heading-playing .heading-trace path {
   animation: trace-intention 1.25s var(--ease) both;
@@ -2622,9 +2660,6 @@ main:focus {
 }
 .heading-playing.heading-signature .heading-accent {
   animation: signature-intention 1.2s var(--ease);
-}
-.heading-playing.heading-assemble .heading-accent {
-  animation: assemble-intention 1.2s var(--ease);
 }
 .heading-invite .heading-trace {
   width: 32%;
@@ -2682,15 +2717,6 @@ main:focus {
   70%,
   100% {
     transform: rotate(0);
-  }
-}
-@keyframes assemble-intention {
-  0% {
-    clip-path: inset(0 100% 0 0);
-  }
-  70%,
-  100% {
-    clip-path: inset(0 -3% -25% -3%);
   }
 }
 .process-sketch {
@@ -2937,4 +2963,43 @@ main:focus {
 .learning .certificate-link img {
   height: auto;
   max-height: 310px;
+}
+
+.heading-rule {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.14em;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  pointer-events: none;
+}
+.heading-playing .heading-rule {
+  animation: build-heading-rule 1.25s var(--ease) both;
+}
+@keyframes build-heading-rule {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.7;
+  }
+  75% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0.25;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .heading-rule,
+  .heading-frame {
+    display: none;
+  }
 }
