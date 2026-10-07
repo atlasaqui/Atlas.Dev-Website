@@ -59,3 +59,9 @@ A branch de redesign é `feat/editorial-portfolio`. O domínio configurado nos m
 ### Tipografia interativa da abertura
 
 `KineticTitle.tsx` aplica Space Grotesk, Bodoni Moda e texto monoespaçado exclusivamente ao título inicial. A sequência Explorar → Compor → Construir conecta direção visual e implementação: as letras de designer abrem uma composição, se alinham com uma guia e então código ganha definição em uma construção progressiva. Os caracteres permanecem legíveis e não são substituídos aleatoriamente. Células de largura estável evitam deslocamentos de layout. Um botão oferece a mesma experiência por teclado ou toque. O título mantém um nome acessível fixo e desativa a animação com movimento reduzido. Timers e animações são cancelados ao desmontar o componente.
+
+### Identidade e interação por seção
+
+Os títulos usam gestos distintos: marcas de curadoria nos trabalhos, uma rota no processo, movimento nos experimentos, um traço autoral na apresentação, montagem na seção de componentes e um convite no contato. Animam ao entrar na tela e podem reagir novamente ao cursor, respeitando movimento reduzido.
+
+O diagrama de processo acompanha a etapa aberta. O retrato oferece guias de composição. O laboratório de interface permite alterar cor e raio dos cantos de um link funcional. O contato oferece cópia de e-mail com retorno acessível. Os estudos de caso compartilham a linguagem de seus respectivos conteúdos. O selo da mesa agora diz “Traço, forma e intenção”, abrangendo desenho no Procreate e composição no Figma.

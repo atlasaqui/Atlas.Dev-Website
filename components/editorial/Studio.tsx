@@ -17,6 +17,13 @@ import { MotionConfig, motion, useReducedMotion } from "framer-motion";
 import { cases, complementary, type CaseStudy } from "@/lib/cases";
 import { Gallery } from "./Gallery";
 import { KineticTitle } from "./KineticTitle";
+import {
+  SectionHeading,
+  ProcessSketch,
+  PortraitComposition,
+  ComponentLab,
+  CopyContact,
+} from "./SectionStories";
 
 export function Signature({ light = false }: { light?: boolean }) {
   return (
@@ -223,8 +230,8 @@ function Workbench() {
           </div>
         )}
         <span className="bench-sticker">
-          DO PIXEL
-          <br />À INTERAÇÃO.
+          TRAÇO, FORMA
+          <br />E INTENÇÃO.
         </span>
       </div>
       <div className="workbench-controls">
@@ -488,11 +495,11 @@ function Process() {
       <div className="wrap process-grid">
         <div>
           <p className="eyebrow">02 / PROCESSO</p>
-          <h2>
-            O detalhe
-            <br />
-            tem <em>um porquê.</em>
-          </h2>
+          <SectionHeading
+            lead="O detalhe"
+            accent="tem um porquê."
+            theme="flow"
+          />
           <p className="section-intro">
             Do primeiro esboço à interação.
             <br />
@@ -508,6 +515,7 @@ function Process() {
               na mesma conversa.
             </span>
           </div>
+          <ProcessSketch step={open} />
         </div>
         <div className="process-list">
           {steps.map((step, index) => (
@@ -549,9 +557,12 @@ function OtherWork() {
       <div className="section-top">
         <div>
           <p className="eyebrow">OUTROS TERRITÓRIOS</p>
-          <h2>
-            Ideias em <em>movimento.</em>
-          </h2>
+          <SectionHeading
+            lead="Ideias em"
+            accent="movimento."
+            theme="motion"
+            inline
+          />
         </div>
         <p>
           Protótipos, interfaces e<br />
@@ -625,26 +636,14 @@ function OtherWork() {
 function About() {
   return (
     <section id="sobre" className="about-section wrap">
-      <div className="about-portrait">
-        <Image
-          src="/ASSETS/Profile/eu.jpeg"
-          alt="Victor Monteiro"
-          fill
-          sizes="(max-width: 700px) 80vw, 400px"
-        />
-        <span className="portrait-label">
-          VICTOR MONTEIRO
-          <br />
-          <small>RECIFE, PERNAMBUCO</small>
-        </span>
-      </div>
+      <PortraitComposition />
       <div className="about-copy">
         <p className="eyebrow">03 / QUEM ESTÁ POR TRÁS</p>
-        <h2>
-          Aprendi a compor.
-          <br />
-          <em>Escolhi construir.</em>
-        </h2>
+        <SectionHeading
+          lead="Aprendi a compor."
+          accent="Escolhi construir."
+          theme="signature"
+        />
         <p className="about-lead">
           Sou Victor, ou atlas no digital. Design e desenvolvimento são partes
           do mesmo trabalho para mim.
@@ -688,11 +687,12 @@ function ToolsAndLearning() {
     <section className="wrap learning-section">
       <div className="tools">
         <p className="eyebrow">FERRAMENTAS NO TRABALHO</p>
-        <h2>
-          Do Figma
-          <br />
-          <em>ao componente.</em>
-        </h2>
+        <SectionHeading
+          lead="Do Figma"
+          accent="ao componente."
+          theme="assemble"
+        />
+        <ComponentLab />
         <dl>
           {[
             ["Interface", "React, Next.js, TypeScript, HTML, CSS e Tailwind"],
@@ -757,11 +757,11 @@ export function Contact() {
           <p className="eyebrow">04 / PRÓXIMA CONVERSA</p>
           <span>FRONT-END · UI/UX · GAME UI</span>
         </div>
-        <h2>
-          Vamos construir
-          <br />
-          <em>a próxima interface?</em>
-        </h2>
+        <SectionHeading
+          lead="Vamos construir"
+          accent="a próxima interface?"
+          theme="invite"
+        />
         <div className="contact-bottom">
           <p>
             Tem um projeto ou uma oportunidade?
@@ -775,6 +775,7 @@ export function Contact() {
             Enviar e-mail <span className="sr-only">para Victor Monteiro</span>
           </External>
         </div>
+        <CopyContact />
         <div className="contact-links">
           <a href="mailto:victor@atlasaqui.dev">victor@atlasaqui.dev</a>
           <External href="https://www.linkedin.com/in/atlasaqui/">
@@ -826,11 +827,11 @@ export default function Studio() {
           <div className="section-top">
             <div>
               <p className="eyebrow">01 / TRABALHOS SELECIONADOS</p>
-              <h2>
-                Projetos com
-                <br />
-                <em>algo a dizer.</em>
-              </h2>
+              <SectionHeading
+                lead="Projetos com"
+                accent="algo a dizer."
+                theme="curate"
+              />
             </div>
             <p>
               Interface, intenção e implementação.

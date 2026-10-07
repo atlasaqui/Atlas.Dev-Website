@@ -15,6 +15,7 @@ import {
   Reveal,
 } from "./Studio";
 import { Gallery } from "./Gallery";
+import { SectionHeading } from "./SectionStories";
 
 function Comparison() {
   const [position, setPosition] = useState(50);
@@ -23,11 +24,11 @@ function Comparison() {
       <div className="section-top">
         <div>
           <p className="eyebrow">ESTRUTURA → COMPOSIÇÃO</p>
-          <h2>
-            Do wireframe
-            <br />
-            <em>à interface.</em>
-          </h2>
+          <SectionHeading
+            lead="Do wireframe"
+            accent="à interface."
+            theme="assemble"
+          />
         </div>
         <p>
           Dois materiais do projeto.
@@ -77,7 +78,7 @@ function Comparison() {
       </label>
       <p className="image-note">
         Os materiais têm enquadramentos próprios; o comparador apresenta
-          estrutura e composição.
+        estrutura e composição.
       </p>
     </section>
   );
@@ -150,11 +151,11 @@ export default function CaseView({ project }: { project: CaseStudy }) {
         <section className="wrap case-story">
           <div className="case-story-title">
             <p className="eyebrow">CONTEXTO & INTENÇÃO</p>
-            <h2>
-              O que precisava
-              <br />
-              <em>ganhar forma.</em>
-            </h2>
+            <SectionHeading
+              lead="O que precisava"
+              accent="ganhar forma."
+              theme="flow"
+            />
           </div>
           <div>
             <p className="case-challenge">{project.challenge}</p>
@@ -178,11 +179,11 @@ export default function CaseView({ project }: { project: CaseStudy }) {
             <div className="section-top">
               <div>
                 <p className="eyebrow">TELAS & DETALHES</p>
-                <h2>
-                  O trabalho,
-                  <br />
-                  <em>de perto.</em>
-                </h2>
+                <SectionHeading
+                  lead="O trabalho,"
+                  accent="de perto."
+                  theme="curate"
+                />
               </div>
               <p>
                 Abra uma imagem para ampliar.
@@ -244,11 +245,11 @@ export default function CaseView({ project }: { project: CaseStudy }) {
         )}
         <section className="wrap case-result">
           <p className="eyebrow">ENTREGA & CONTINUIDADE</p>
-          <h2>
-            O que fica
-            <br />
-            <em>desse trabalho.</em>
-          </h2>
+          <SectionHeading
+            lead="O que fica"
+            accent="desse trabalho."
+            theme="signature"
+          />
           <p className="result-copy">{project.result}</p>
           <div className="case-credits">
             <span>CRÉDITOS & CONTEXTO</span>

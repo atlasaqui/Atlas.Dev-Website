@@ -2582,3 +2582,359 @@ main:focus {
     display: none;
   }
 }
+
+/* Section stories share the same ink, with a distinct gesture for each purpose. */
+.story-heading .heading-accent {
+  position: relative;
+  display: inline-block;
+}
+.heading-trace {
+  position: absolute;
+  left: 0;
+  bottom: -0.2em;
+  width: 100%;
+  height: 0.28em;
+  overflow: visible;
+  pointer-events: none;
+}
+.heading-trace path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0;
+}
+.heading-curate .heading-trace {
+  inset: -0.06em -0.06em;
+  width: calc(100% + 0.12em);
+  height: calc(100% + 0.12em);
+}
+.heading-playing .heading-trace path {
+  animation: trace-intention 1.25s var(--ease) both;
+}
+.heading-playing.heading-curate .heading-accent {
+  animation: curate-intention 1.2s var(--ease);
+}
+.heading-playing.heading-motion .heading-accent {
+  animation: motion-intention 1.2s var(--ease);
+}
+.heading-playing.heading-signature .heading-accent {
+  animation: signature-intention 1.2s var(--ease);
+}
+.heading-playing.heading-assemble .heading-accent {
+  animation: assemble-intention 1.2s var(--ease);
+}
+.heading-invite .heading-trace {
+  width: 32%;
+  left: auto;
+  right: -0.01em;
+}
+.process-section .heading-trace path {
+  stroke: #f6a592;
+}
+.contact-section .heading-trace path {
+  stroke: var(--paper);
+}
+@keyframes trace-intention {
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 1;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 0.8;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    opacity: 0.25;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes curate-intention {
+  0% {
+    transform: translateX(8px);
+  }
+  65%,
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes motion-intention {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  35% {
+    transform: translateX(8px) rotate(-1deg);
+  }
+  70% {
+    transform: translateX(-2px);
+  }
+}
+@keyframes signature-intention {
+  0% {
+    transform: rotate(-1.5deg);
+  }
+  70%,
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes assemble-intention {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  70%,
+  100% {
+    clip-path: inset(0 -3% -25% -3%);
+  }
+}
+.process-sketch {
+  max-width: 355px;
+  border: 1px solid #41453e;
+  margin-top: 30px;
+  padding: 18px;
+}
+.sketch-caption,
+.lab-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font: 8px var(--mono);
+  letter-spacing: 0.04em;
+}
+.sketch-caption {
+  color: #bbc0b3;
+}
+.process-sketch svg {
+  width: 100%;
+  height: auto;
+  margin-top: 18px;
+  overflow: visible;
+}
+.process-sketch svg * {
+  fill: none;
+  stroke: #6b7363;
+  stroke-width: 1;
+}
+.process-sketch[data-step="0"] .sketch-action,
+.process-sketch[data-step="1"] .sketch-frame,
+.process-sketch[data-step="2"] .sketch-route,
+.process-sketch[data-step="3"] .sketch-state {
+  stroke: #f6a592;
+}
+.process-sketch .sketch-route {
+  stroke-dasharray: 220;
+  animation: sketch-route 850ms var(--ease);
+}
+@keyframes sketch-route {
+  from {
+    stroke-dashoffset: 220;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.process-sketch > p {
+  font-size: 12px;
+  color: #bbc0b3;
+  margin-top: 10px;
+}
+.portrait-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 11px 12px;
+  font: 10px var(--mono);
+  z-index: 2;
+}
+.portrait-guides {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 400ms ease;
+  pointer-events: none;
+}
+.portrait-composing .portrait-guides {
+  opacity: 1;
+}
+.portrait-guides i {
+  position: absolute;
+  background: rgba(255, 252, 247, 0.7);
+}
+.portrait-guides i:nth-child(1),
+.portrait-guides i:nth-child(2) {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+}
+.portrait-guides i:nth-child(1) {
+  left: 33.33%;
+}
+.portrait-guides i:nth-child(2) {
+  left: 66.66%;
+}
+.portrait-guides i:nth-child(3),
+.portrait-guides i:nth-child(4) {
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+.portrait-guides i:nth-child(3) {
+  top: 33.33%;
+}
+.portrait-guides i:nth-child(4) {
+  top: 66.66%;
+}
+.portrait-guides > span {
+  position: absolute;
+  bottom: 95px;
+  left: 18px;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 8px;
+  font: 8px var(--mono);
+}
+.component-lab {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 20px;
+  margin-top: 30px;
+}
+.lab-caption {
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+.lab-preview {
+  background: var(--paper);
+  padding: 34px 16px;
+  margin-block: 20px;
+  display: grid;
+  place-items: center;
+}
+.lab-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: var(--lab-accent);
+  color: #fffcf7;
+  padding: 15px 20px;
+  border-radius: var(--lab-radius);
+  font-size: 12px;
+  transition:
+    border-radius 300ms var(--ease),
+    background 300ms ease,
+    transform 200ms ease;
+}
+.lab-button:hover {
+  transform: translateY(-3px);
+}
+.lab-button:active {
+  transform: translateY(0);
+}
+.lab-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.lab-controls fieldset {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+.lab-controls legend,
+.lab-controls label {
+  font-size: 11px;
+  color: var(--muted);
+}
+.lab-controls output {
+  float: right;
+  font-family: var(--mono);
+}
+.lab-controls input {
+  display: block;
+  width: 100%;
+  accent-color: var(--accent);
+  margin-top: 14px;
+}
+.lab-swatches {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+.lab-swatches button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid var(--surface);
+  outline: 1px solid transparent;
+}
+.lab-swatches button[aria-pressed="true"] {
+  outline-color: var(--ink);
+}
+.lab-note {
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.contact-copy {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.contact-copy button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  padding: 8px 0;
+}
+.contact-copy span {
+  font-size: 12px;
+}
+.contact-copy button:focus-visible {
+  outline-color: var(--paper);
+}
+@media (max-width: 500px) {
+  .component-lab {
+    padding: 16px;
+  }
+  .lab-controls {
+    gap: 15px;
+  }
+  .heading-invite .heading-trace {
+    right: 0.05em;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .heading-trace {
+    display: none;
+  }
+  .heading-accent,
+  .sketch-route {
+    animation: none !important;
+  }
+}
+
+.process-sketch[data-step="1"] .sketch-frame *,
+.process-sketch[data-step="3"] .sketch-state * {
+  stroke: #f6a592;
+}
+.learning {
+  align-self: start;
+}
+.learning .certificate-link img {
+  height: auto;
+  max-height: 310px;
+}
