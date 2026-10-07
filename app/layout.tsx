@@ -1,31 +1,32 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import CustomCursor from '@/components/CustomCursor';
+import type { Metadata } from "next";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'atlas.dev — Victor William',
+  title: "Victor Monteiro — Design & Front-end | atlas.dev",
   description:
-    'Victor William — atlas.dev. Front-End Developer, UI/UX Designer e Game Art Director. Next.js, TypeScript, Tailwind, Design Systems.',
-  metadataBase: new URL('https://atlas-dev-website.vercel.app'),
+    "Victor Monteiro: UI/UX, front-end e interfaces para jogos. Conheça projetos, decisões de design e implementação — do Figma ao componente.",
+  metadataBase: new URL("https://atlasaquidev.vercel.app"),
+  alternates: { canonical: "/" },
   openGraph: {
-    title: 'atlas.dev — Victor William',
-    description: 'Front-End Developer, UI/UX Designer e Game Art Director.',
-    type: 'website'
-  }
+    title: "Victor Monteiro — Design & Front-end",
+    description:
+      "Olhar de designer. Mão no código. Interfaces para web e jogos.",
+    type: "website",
+  },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="pt-BR" className="overflow-x-hidden">
-      <body className="bg-bg text-text1 antialiased overflow-x-hidden w-full max-w-[100vw]">
-        <a
-          href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[999] focus:bg-red focus:text-white focus:px-5 focus:py-2 focus:rounded-md2 focus:font-bold"
-        >
+      <body>
+        <a href="#main" className="skip-link">
           Pular para o conteúdo principal
         </a>
         {children}
-        <CustomCursor />
       </body>
     </html>
   );
