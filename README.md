@@ -55,3 +55,7 @@ As imagens usam o otimizador do Next.js com tamanhos responsivos. Vídeos comple
 Atualize informações profissionais e links em `Studio.tsx` e `lib/cases.ts`. Não inclua métricas, participação de clientes ou funcionalidades sem evidência. Certificados e diploma já estavam no acervo público do projeto.
 
 A branch de redesign é `feat/editorial-portfolio`. O domínio configurado nos metadados é https://atlasaquidev.vercel.app/. A publicação da nova interface depende da integração dessa branch ou de um deploy de preview; o commit da branch não substitui a versão de produção.
+
+### Tipografia interativa da abertura
+
+`KineticTitle.tsx` aplica Space Grotesk, Bodoni Moda e texto monoespaçado exclusivamente ao título inicial. Letras próximas ao cursor se deslocam e embaralham brevemente, com retorno ao texto original. Células de largura estável evitam deslocamentos de layout. Um botão oferece a mesma experiência por teclado ou toque. O título mantém um nome acessível fixo e desativa a animação com movimento reduzido. Timers e animações são cancelados ao desmontar o componente.

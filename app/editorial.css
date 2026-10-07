@@ -2401,3 +2401,108 @@ main:focus {
     transform: none;
   }
 }
+
+/* The opening has its own type palette; the rest of the editorial system stays independent. */
+@font-face {
+  font-family: Atlas Grotesk;
+  src: url("/fonts/space-grotesk.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: Atlas Bodoni;
+  src: url("/fonts/bodoni-moda-italic.woff2") format("woff2");
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+.hero h1.kinetic-title {
+  font-family:
+    Atlas Grotesk,
+    var(--sans);
+  font-size: clamp(52px, 5.65vw, 88px);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 1.08;
+}
+.title-line {
+  display: block;
+}
+.title-design {
+  font-family:
+    Atlas Bodoni,
+    Georgia,
+    serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.28em;
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+  margin-bottom: 0.08em;
+}
+.title-code {
+  font-size: 0.88em;
+  letter-spacing: -0.065em;
+}
+.kinetic-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.letter-cell {
+  display: inline-grid;
+  position: relative;
+}
+.letter-measure {
+  visibility: hidden;
+  grid-area: 1 / 1;
+}
+.letter-glyph {
+  grid-area: 1 / 1;
+  display: block;
+  text-align: center;
+  transform-origin: 50% 80%;
+}
+.code-word {
+  font-family: var(--mono);
+  font-size: 0.8em;
+  font-weight: 400;
+  letter-spacing: -0.07em;
+}
+.type-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  margin-top: 22px;
+  padding: 8px 0;
+  text-align: left;
+}
+.type-play:hover {
+  color: var(--accent);
+}
+.type-hint-touch {
+  display: none;
+}
+.hero .type-play + .hero-intro {
+  margin-top: 14px;
+}
+@media (max-width: 1050px) and (min-width: 761px) {
+  .hero h1.kinetic-title {
+    font-size: clamp(43px, 5.65vw, 60px);
+  }
+}
+@media (max-width: 760px) {
+  .hero h1.kinetic-title {
+    font-size: clamp(48px, 10.3vw, 78px);
+  }
+}
+@media (hover: none) {
+  .type-hint-mouse {
+    display: none;
+  }
+  .type-hint-touch {
+    display: inline;
+  }
+}

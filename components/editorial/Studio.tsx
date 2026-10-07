@@ -16,6 +16,7 @@ import {
 import { MotionConfig, motion, useReducedMotion } from "framer-motion";
 import { cases, complementary, type CaseStudy } from "@/lib/cases";
 import { Gallery } from "./Gallery";
+import { KineticTitle } from "./KineticTitle";
 
 export function Signature({ light = false }: { light?: boolean }) {
   return (
@@ -308,13 +309,7 @@ function Hero() {
         <p className="eyebrow">
           <span className="accent-mark" /> VICTOR MONTEIRO / RECIFE, BRASIL
         </p>
-        <h1 id="hero-title">
-          Olhar de
-          <br />
-          <span className="serif-word">designer.</span>
-          <br />
-          Mão no código<span className="accent-text">.</span>
-        </h1>
+        <KineticTitle />
         <p className="hero-intro">
           Crio interfaces para web e jogos.
           <br />
