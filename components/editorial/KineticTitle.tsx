@@ -1,87 +1,113 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "framer-motion";
-import { RotateCcw } from "lucide-react";
+import { ArrowRight, RotateCcw } from "lucide-react";
 
-const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ{}<>/*+";
+const steps = ["Explorar", "Compor", "Construir"];
+const descriptions = [
+  "Da ideia à interface.",
+  "Exploro possibilidades visuais.",
+  "Dou forma e hierarquia à ideia.",
+  "Construo uma interface que funciona.",
+];
 
-/** Fixed letter cells keep the heading in place while the glyphs move. */
+/** A short art-to-code sequence: explore composition, align it, then build. */
 export function KineticTitle() {
   const root = useRef<HTMLHeadingElement>(null);
-  const active = useRef(new Map<HTMLElement, () => void>());
+  const animations = useRef<Animation[]>([]);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const armed = useRef(true);
+  const [stage, setStage] = useState(0);
   const reduced = useReducedMotion();
 
-  function reset() {
-    active.current.forEach((stop) => stop());
-    active.current.clear();
+  function cancel() {
+    animations.current.forEach((animation) => animation.cancel());
+    timers.current.forEach(clearTimeout);
+    animations.current = [];
+    timers.current = [];
   }
 
   useEffect(() => {
-    if (reduced) reset();
-    return reset;
+    if (reduced) {
+      cancel();
+      setStage(0);
+    }
+    return cancel;
   }, [reduced]);
 
-  function play(cell: HTMLElement, delay = 0) {
-    if (reduced || active.current.has(cell)) return;
-    const glyph = cell.querySelector<HTMLElement>(".letter-glyph");
-    if (!glyph) return;
-    const original = cell.dataset.letter || "";
-    let animation: Animation | undefined;
-    let interval: ReturnType<typeof setInterval> | undefined;
-    let end: ReturnType<typeof setTimeout> | undefined;
-    let done: ReturnType<typeof setTimeout> | undefined;
-    const start = setTimeout(() => {
-      const direction = Math.random() > 0.5 ? 1 : -1;
-      animation = glyph.animate(
-        [
-          { transform: "translateY(0) rotate(0deg)", color: "var(--ink)" },
-          {
-            transform: `translateY(-.16em) rotate(${direction * 9}deg)`,
-            color: "var(--accent)",
-            offset: 0.25,
-          },
-          {
-            transform: `translateY(.035em) rotate(${-direction * 2}deg)`,
-            offset: 0.7,
-          },
-          { transform: "translateY(0) rotate(0deg)", color: "var(--ink)" },
-        ],
-        { duration: 620, easing: "cubic-bezier(.22,1,.36,1)" },
-      );
-      interval = setInterval(() => {
-        glyph.textContent =
-          alphabet[Math.floor(Math.random() * alphabet.length)];
-      }, 65);
-      end = setTimeout(() => {
-        clearInterval(interval);
-        glyph.textContent = original;
-      }, 235);
-      done = setTimeout(() => active.current.delete(cell), 640);
-    }, delay);
-    active.current.set(cell, () => {
-      clearTimeout(start);
-      clearInterval(interval);
-      clearTimeout(end);
-      clearTimeout(done);
-      animation?.cancel();
-      glyph.textContent = original;
-    });
-  }
-
-  function ripple() {
+  function tellStory() {
     if (!root.current || reduced) return;
-    reset();
-    root.current
-      .querySelectorAll<HTMLElement>(".letter-cell")
-      .forEach((cell, index) => play(cell, index * 24));
+    cancel();
+    armed.current = false;
+    setStage(1);
+    const design = root.current.querySelectorAll<HTMLElement>(
+      ".title-design .letter-glyph",
+    );
+    const code = root.current.querySelectorAll<HTMLElement>(
+      ".code-word .letter-glyph",
+    );
+    design.forEach((glyph, index) => {
+      // A deliberate fan of letters, like studies on a designer's worktable.
+      const rotation = [-8, -5, -2, 2, 5, 7, 4, -3, 0][index];
+      const rise = [-5, -10, -14, -17, -14, -10, -5, -2, 0][index];
+      animations.current.push(
+        glyph.animate(
+          [
+            { transform: "translateY(0) rotate(0deg)" },
+            {
+              transform: `translateY(${rise}px) rotate(${rotation}deg)`,
+              offset: 0.3,
+            },
+            {
+              transform: `translateY(${rise}px) rotate(${rotation}deg)`,
+              offset: 0.55,
+            },
+            { transform: "translateY(0) rotate(0deg)" },
+          ],
+          {
+            duration: 1500,
+            delay: index * 25,
+            easing: "cubic-bezier(.22,1,.36,1)",
+          },
+        ),
+      );
+    });
+    timers.current.push(setTimeout(() => setStage(2), 850));
+    timers.current.push(
+      setTimeout(() => {
+        setStage(3);
+        code.forEach((glyph, index) => {
+          animations.current.push(
+            glyph.animate(
+              [
+                { opacity: 0.22, transform: "translateY(.055em)" },
+                { opacity: 1, transform: "translateY(0)" },
+              ],
+              {
+                duration: 420,
+                delay: index * 90,
+                easing: "cubic-bezier(.22,1,.36,1)",
+                fill: "backwards",
+              },
+            ),
+          );
+        });
+      }, 1750),
+    );
+    timers.current.push(
+      setTimeout(() => {
+        animations.current.forEach((animation) => animation.cancel());
+        animations.current = [];
+      }, 2900),
+    );
   }
 
   function word(text: string, className = "") {
     return (
       <span className={`kinetic-word ${className}`}>
         {Array.from(text).map((letter, index) => (
-          <span className="letter-cell" data-letter={letter} key={index}>
+          <span className="letter-cell" key={index}>
             <span className="letter-measure">{letter}</span>
             <span className="letter-glyph">{letter}</span>
           </span>
@@ -91,26 +117,24 @@ export function KineticTitle() {
   }
 
   return (
-    <>
+    <div className="title-story" data-stage={reduced ? 0 : stage}>
       <h1
         ref={root}
         id="hero-title"
         className="kinetic-title"
         aria-label="Olhar de designer. Mão no código."
         onPointerOver={(event) => {
-          if (event.pointerType !== "mouse") return;
-          const cell = (event.target as HTMLElement).closest<HTMLElement>(
-            ".letter-cell",
-          );
-          if (!cell) return;
-          play(cell);
-          const previous = cell.previousElementSibling as HTMLElement | null;
-          const next = cell.nextElementSibling as HTMLElement | null;
-          if (previous) play(previous, 40);
-          if (next) play(next, 65);
+          if (event.pointerType !== "mouse" || !armed.current) return;
+          if (
+            (event.target as HTMLElement).closest(".title-design, .code-word")
+          )
+            tellStory();
+        }}
+        onPointerLeave={() => {
+          armed.current = true;
         }}
         onPointerUp={(event) => {
-          if (event.pointerType === "touch") ripple();
+          if (event.pointerType === "touch") tellStory();
         }}
       >
         <span aria-hidden="true">
@@ -124,22 +148,29 @@ export function KineticTitle() {
           </span>
         </span>
       </h1>
-      {!reduced && (
-        <button
-          type="button"
-          className="type-play"
-          onClick={ripple}
-          aria-label="Brincar com as letras do título"
-        >
-          <RotateCcw size={12} aria-hidden="true" />
-          <span className="type-hint-mouse">
-            Passe pelas letras. Experimente.
-          </span>
-          <span className="type-hint-touch">
-            Toque para brincar com as letras.
-          </span>
-        </button>
-      )}
-    </>
+      <div className="title-story-note">
+        <ol className="title-story-steps" aria-label="Da ideia à interface">
+          {steps.map((step, index) => (
+            <li key={step} data-active={stage === index + 1 && !reduced}>
+              <span>{step}</span>
+              {index < 2 && <ArrowRight size={11} aria-hidden="true" />}
+            </li>
+          ))}
+        </ol>
+        <p className="title-story-caption">
+          {descriptions[reduced ? 0 : stage]}
+        </p>
+        {!reduced && (
+          <button
+            type="button"
+            className="type-play"
+            onClick={tellStory}
+            aria-label="Ver o percurso da ideia à interface"
+          >
+            <RotateCcw size={12} aria-hidden="true" /> Ver a ideia ganhar forma
+          </button>
+        )}
+      </div>
+    </div>
   );
 }
