@@ -2997,6 +2997,73 @@ main:focus {
     opacity: 0.25;
   }
 }
+
+/* ISAC: its own visual identity inside the Atlas editorial composition. */
+.art-bazar { background: #e6eeeb; color: #00667a; }
+.art-bazar .bazar-word { width: 49%; left: 5%; top: 23%; font-family: var(--sans); font-size: clamp(18px, 2vw, 30px); letter-spacing: -0.7px; }
+.isac-case-logo { display: block; width: min(100%, 230px); height: 120px; object-fit: contain; object-position: left center; margin-bottom: 22px; }
+.bazar-word p { margin: 0; }
+.bazar-word em { font-family: var(--serif); color: #40291e; }
+.art-bazar .bazar-phone { border-color: #00667a; background: #faf9f5; }
+.case-hero-art .art-bazar .bazar-word { left: 6%; top: 23%; width: 46%; font-size: clamp(26px, 3.3vw, 46px); }
+.case-hero-art .isac-case-logo { width: 290px; height: 155px; }
+.development-note { margin: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.development-note summary { display: flex; align-items: center; gap: 14px; padding: 18px 0; cursor: pointer; list-style: none; }
+.development-note summary::-webkit-details-marker { display: none; }
+.development-note summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.development-note summary strong { display: block; font-weight: 600; font-size: 14px; }
+.development-note summary small { display: block; margin-top: 5px; font-size: 12px; line-height: 1.5; color: #645b50; }
+.development-lock { width: 32px; height: 32px; flex: 0 0 32px; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.development-shackle { transform-origin: 11px 14px; transition: transform 450ms var(--ease); }
+.development-spark { opacity: .3; transition: opacity 300ms; }
+.development-note summary:hover .development-shackle, .development-note summary:focus-visible .development-shackle, .development-note[open] .development-shackle { transform: rotate(-14deg); }
+.development-note summary:hover .development-spark, .development-note[open] .development-spark { opacity: 1; }
+.development-toggle { margin-left: auto; font-size: 24px; color: var(--accent); transition: transform 300ms; }
+.development-note[open] .development-toggle { transform: rotate(45deg); }
+.development-chapters { padding: 0 0 24px 46px; font-size: 14px; line-height: 1.7; }
+.development-chapters > p { max-width: 650px; margin: 0 0 24px; }
+.development-chapters ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.development-chapters li { position: relative; border-left: 2px solid #00667a; padding-left: 16px; }
+.development-chapters li span { display: block; font-family: var(--mono); font-size: 9px; letter-spacing: .08em; color: #00667a; }
+.development-chapters li strong { display: block; margin: 5px 0; font-size: 15px; font-weight: 500; }
+.development-chapters li small { display: block; font-size: 12px; color: #645b50; }
+.development-chapters .development-next { border-left-style: dashed; border-left-color: var(--accent); }
+.development-chapters .development-next span { color: var(--accent); }
+.development-chapters .development-footnote { margin: 24px 0 0; font-size: 11px; }
+.development-note-large { max-width: 800px; margin: 30px 0 0; }
+.development-note[open] .development-chapters li { animation: chapter-arrives 400ms var(--ease) both; }
+.development-note[open] .development-chapters li:nth-child(2) { animation-delay: 70ms; }
+.development-note[open] .development-chapters li:nth-child(3) { animation-delay: 140ms; }
+@keyframes chapter-arrives { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+.development-note-large .development-chapters ol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.development-note { margin: 0; border: 1px solid #00667a; }
+.development-note summary { position: relative; padding: 22px 24px; background: #163f43; color: #fffcf7; border-left: 4px solid #f27b2d; gap: 18px; }
+.development-note summary strong { font-size: 21px; line-height: 1.25; letter-spacing: -.4px; }
+.development-project-name { display: block; margin-bottom: 8px; font-family: var(--mono); font-size: 9px; letter-spacing: .08em; color: #bde6df; }
+.development-note summary small { color: #e0ede8; max-width: 360px; line-height: 1.6; }
+.development-invitation { display: block; margin-top: 12px; color: #ffb47c; font-size: 11px; }
+.development-note .development-lock { width: 42px; height: 42px; flex-basis: 42px; stroke: #ffb47c; }
+.development-note .development-toggle { color: #ffb47c; font-size: 28px; }
+.development-note .development-chapters { padding: 25px 24px; background: var(--surface); }
+.development-note-large { margin: 30px 0 0; }
+.project-bazar-solidario .project-cover-link { border: 1px solid #00667a; border-top: 0; }
+@media (max-width: 700px) {
+  .development-note summary { padding: 20px 16px; gap: 12px; }
+  .development-note summary strong { font-size: 19px; }
+  .development-project-name { font-size: 8px; letter-spacing: .04em; }
+  .development-note .development-lock { width: 32px; height: 32px; flex-basis: 32px; }
+  .development-note .development-chapters { padding: 22px 16px; }
+}
+@media (max-width: 700px) {
+  .art-bazar .bazar-word, .case-hero-art .art-bazar .bazar-word { font-size: 22px; width: 47%; top: 22%; left: 5%; }
+  .art-bazar .isac-case-logo, .case-hero-art .isac-case-logo { width: 100%; height: 100px; margin-bottom: 15px; }
+  .development-note-large .development-chapters ol { grid-template-columns: 1fr; }
+  .development-chapters { padding-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .development-shackle, .development-spark, .development-toggle { transition: none; transform: none !important; }
+  .development-note[open] .development-chapters li { animation: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   .heading-rule,
   .heading-frame {
