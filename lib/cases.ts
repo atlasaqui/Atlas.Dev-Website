@@ -214,7 +214,15 @@ export const cases: CaseStudy[] = [
       "Estudo de redesign com site público e protótipo no Figma. Não representa contratação, parceria ou aprovação oficial da marca.",
     credits:
       "Estudo independente de Victor Monteiro. Nome e identidade da marca são referências do projeto.",
-    images: original("bodedono").images,
+    images: [
+      { src: "/ASSETS/BodeDoNo/inicio-site.png", caption: "Site publicado · abertura com vídeo de gastronomia e chamadas principais", wide: true },
+      { src: "/ASSETS/BodeDoNo/cardapio-site.png", caption: "Cardápio completo · categorias, fotografia dos pratos e apresentação dos itens" },
+      { src: "/ASSETS/BodeDoNo/unidades-site.png", caption: "Unidades · fotografias dos espaços e organização dos locais" },
+      { src: "/ASSETS/BodeDoNo/delivery-site.png", caption: "Delivery · opções de pedido e sequência de funcionamento" },
+      { src: "/ASSETS/BodeDoNo/eventos-site.png", caption: "Eventos · serviços apresentados em uma composição de texto e cards" },
+      { src: "/ASSETS/BodeDoNo/contato-site.png", caption: "Contato · ilustração da marca e organização do formulário" },
+      ...original("bodedono").images,
+    ],
     links: original("bodedono").links,
   },
 ];
