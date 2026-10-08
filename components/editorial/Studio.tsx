@@ -419,7 +419,7 @@ export function ProjectArt({
       </div>
     );
   return (
-    <div className="project-art art-bode">
+    <div className="project-art art-bode" tabIndex={compact ? 0 : undefined} aria-label={compact ? "Prévia do projeto Bode do Nô" : undefined}>
       <Image
         src="/ASSETS/BodeDoNo/cover.png"
         alt="Interface final do estudo Bode do Nô"

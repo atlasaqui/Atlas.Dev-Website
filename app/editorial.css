@@ -707,7 +707,8 @@ main:focus {
   padding: 55px 30px 0;
   transition: transform 0.7s var(--ease);
 }
-.project-cover-link:hover .art-bode > img {
+.project-cover-link:is(:hover, :focus-visible) .art-bode > img,
+.case-hero-art .art-bode:is(:hover, :focus-visible) > img {
   transform: translateY(-10px);
 }
 .art-bode .art-caption {
@@ -2413,6 +2414,8 @@ main:focus {
   .project-cover-link:hover .phone-back,
   .project-cover-link:hover .bazar-phone,
   .project-cover-link:hover .art-bode > img,
+  .project-cover-link:focus-visible .art-bode > img,
+  .case-hero-art .art-bode:is(:hover, :focus-visible) > img,
   .project-cover-link:hover .art-rastros img {
     transform: none;
   }
