@@ -84,7 +84,7 @@ export const PROJECTS: Project[] = [
       'Plataforma gamificada de aprendizado — criação de personagem, streaks e missões. UI vibrante focada em engajamento contínuo.',
     tags: ['EdTech', 'Gamificação', 'UI/UX'],
     filterTags: ['edtech', 'ui-ux'],
-    thumb: '/ASSETS/Contratas/1.png',
+    thumb: '/ASSETS/Contratas/card-logo.png',
     palette: ['#7B2FBE', '#FF6B35', '#FFD93D', '#0D0D1A'],
     gradient: 'linear-gradient(135deg,#0d001a,#2a0057)',
     links: [
@@ -113,10 +113,10 @@ export const PROJECTS: Project[] = [
     title: 'Jet Set Radio — Redesign',
     subtitle: 'Front-End · Redesign · SEGA · JavaScript',
     description:
-      'Redesign completo do site do clássico jogo da SEGA. Experiência web imersiva inspirada na estética graffiti e na energia urbana do jogo original.',
+      'Landing page reimaginada de Jet Set Radio, o clássico jogo da SEGA. Um estudo independente de design e front-end inspirado na estética graffiti e na energia urbana do jogo original.',
     tags: ['SEGA', 'Redesign', 'Front-End'],
     filterTags: ['frontend', 'ui-ux'],
-    thumb: '/ASSETS/jet-set-radio-card.png',
+    thumb: '/ASSETS/jet-set-radio-card-v2.png',
     thumbVideo: '/ASSETS/JetSetRadio/1.mp4',
     palette: ['#003fb4', '#e8b800', '#ff2800', '#00c850'],
     gradient: 'linear-gradient(135deg,#003fb4,#e8b800)',

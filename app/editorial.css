@@ -899,7 +899,12 @@ main:focus {
   background: #ede2f4;
 }
 .other-contratas {
-  background: #eae2da;
+  background: #16232f;
+}
+.other-contratas > img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0;
 }
 .other-title {
   display: flex;
