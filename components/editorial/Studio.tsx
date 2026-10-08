@@ -359,8 +359,8 @@ export function ProjectArt({
     return (
       <div className={`project-art art-bfr ${compact ? "compact" : ""}`} tabIndex={compact ? 0 : undefined} aria-label={compact ? "Big Fight Small Robots: composição de Game UI" : undefined}>
         <svg className="robot-cutouts" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true">
-          <path className="robot-cut-blue" d="M0 88 304 41 270 68 24 147 0 135Z" />
-          <path className="robot-cut-paper" d="M0 283 259 244 293 264 0 339Z" />
+          <path className="robot-cut-blue" d="M-100 -20H125L30 420H-100Z" />
+          <path className="robot-cut-paper" d="M-100 279L420 316L400 365L-100 326Z" />
         </svg>
         <span className="art-caption">PUNK / GAME UI / MOBILE</span>
         <RobotTitle />
