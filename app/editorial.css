@@ -3177,5 +3177,6 @@ main:focus {
 .art-bfr .phone-front, .case-hero-art .art-bfr .phone-front { left: 56%; width: 25%; }
 .art-bfr .phone-back, .case-hero-art .art-bfr .phone-back { left: 76%; width: 23%; }
 .art-bfr .art-phone { background: transparent; box-shadow: none; }
+.art-bfr .art-corner { color: #100918; }
 .art-bfr.compact:focus-visible { outline-color: var(--robot-blue); }
 @media (prefers-reduced-motion: reduce) { .robot-cutouts path { transition: none; } }
