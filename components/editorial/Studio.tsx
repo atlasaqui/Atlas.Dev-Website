@@ -16,6 +16,7 @@ import {
 import { MotionConfig, motion, useReducedMotion } from "framer-motion";
 import { cases, complementary, type CaseStudy } from "@/lib/cases";
 import { Gallery } from "./Gallery";
+import { DevelopmentStatus } from "./DevelopmentStatus";
 import { KineticTitle } from "./KineticTitle";
 import {
   SectionHeading,
@@ -176,7 +177,7 @@ function Workbench() {
     {
       name: "UI mobile",
       project: cases[2],
-      images: ["/ASSETS/Bazar/home.png"],
+      images: ["/ASSETS/Bazar/home-atual.jpg"],
     },
   ];
   const current = previews[selected];
@@ -389,19 +390,15 @@ export function ProjectArt({
   if (project.slug === "bazar-solidario")
     return (
       <div className="project-art art-bazar">
-        <span className="art-caption">PEÇAS COM HISTÓRIA.</span>
+        <span className="art-caption">MODA CIRCULAR / IDENTIDADE LOCAL</span>
         <div className="bazar-word" aria-hidden="true">
-          Bom pra você.
-          <br />
-          <em>
-            Melhor para
-            <br />o mundo.
-          </em>
+          <Image className="isac-case-logo" src="/ASSETS/Bazar/isac-logo.svg" alt="" width={300} height={170} />
+          <p>Estilo de perto.<br /><em>Histórias que continuam.</em></p>
         </div>
         <div className="bazar-phone">
           <Image
-            src="/ASSETS/Bazar/home.png"
-            alt="Tela inicial mobile do Bazar Solidário"
+            src="/ASSETS/Bazar/home-atual.jpg"
+            alt="Tela inicial mobile do ISAC Brechó"
             fill
             sizes="(max-width: 600px) 36vw, 220px"
           />
@@ -427,6 +424,7 @@ export function ProjectArt({
 function ProjectCard({ project }: { project: CaseStudy }) {
   return (
     <Reveal className={`project-card project-${project.slug}`}>
+      {project.slug === "bazar-solidario" && <DevelopmentStatus />}
       <Link
         href={`/projetos/${project.slug}`}
         className="project-cover-link"
@@ -455,7 +453,7 @@ function ProjectCard({ project }: { project: CaseStudy }) {
       </div>
       <p className="project-summary">{project.summary}</p>
       <div className="project-meta">
-        <span>{project.status}</span>
+        <span>{project.slug === "bazar-solidario" ? "Projeto colaborativo" : project.status}</span>
         <span>{project.stack.slice(0, 2).join(" / ")}</span>
       </div>
     </Reveal>
