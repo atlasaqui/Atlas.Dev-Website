@@ -30,13 +30,13 @@ import {
 export function Signature({ light = false }: { light?: boolean }) {
   return (
     <span className={`signature ${light ? "signature-light" : ""}`}>
-      <svg width="27" height="27" viewBox="0 0 28 28" aria-hidden="true">
+      <svg width="34" height="27" viewBox="0 0 80 64" aria-hidden="true">
         <path
-          d="M3 24 14 3l11 21M7 17h14M14 3v21"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
+          d="M41 15C26 9 11 18 11 34C11 50 25 58 39 52L43 50V54H54V12H43V18L41 15ZM42 34C42 43 37 46 31 46C24 46 21 41 21 34C21 27 25 22 31 22C38 22 42 27 42 34Z"
+          fill="currentColor"
+          fillRule="evenodd"
         />
+        <rect x="59" y="43" width="11" height="11" fill={light ? "#E26750" : "#C23725"} />
       </svg>
       atlas<span className="signature-dot">.</span>
       <span className="signature-dev">dev</span>
