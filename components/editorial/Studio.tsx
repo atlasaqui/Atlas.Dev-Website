@@ -342,12 +342,6 @@ function Hero() {
 function RobotTitle() {
   return (
     <div className="robot-word" aria-hidden="true">
-      <svg className="robot-marks" viewBox="0 0 300 190" fill="none">
-        <path d="M10 55 102 23" />
-        <path d="m188 30 90-17" />
-        <path d="m4 138 66-22" />
-        <path d="m183 166 96-36" />
-      </svg>
       <span className="robot-type robot-type-blue">SMALL<br />ROBOTS.</span>
       <span className="robot-type robot-type-pink">SMALL<br />ROBOTS.</span>
     </div>
@@ -364,6 +358,10 @@ export function ProjectArt({
   if (project.slug === "big-fight-small-robots")
     return (
       <div className={`project-art art-bfr ${compact ? "compact" : ""}`} tabIndex={compact ? 0 : undefined} aria-label={compact ? "Big Fight Small Robots: composição de Game UI" : undefined}>
+        <svg className="robot-cutouts" viewBox="0 0 600 400" preserveAspectRatio="none" aria-hidden="true">
+          <path className="robot-cut-blue" d="M0 88 304 41 270 68 24 147 0 135Z" />
+          <path className="robot-cut-paper" d="M0 283 259 244 293 264 0 339Z" />
+        </svg>
         <span className="art-caption">PUNK / GAME UI / MOBILE</span>
         <RobotTitle />
         <div className="art-phone phone-back">
