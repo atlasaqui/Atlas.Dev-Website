@@ -608,40 +608,7 @@ main:focus {
   opacity: 1;
   isolation: isolate;
   z-index: 1;
-  text-shadow: 2px 3px 0 #100922;
-}
-.robot-word::after,
-.robot-word::before {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  z-index: -1;
-}
-.robot-word::after {
-  inset: -0.08em -0.09em;
-  background: #123a8a;
-  clip-path: polygon(0 8%, 97% 0, 100% 91%, 3% 100%);
-}
-.robot-word::before {
-  inset: -0.35em -0.25em;
-  background: repeating-linear-gradient(165deg, transparent 0 17px, #28b9ec 17px 25px, transparent 25px 39px);
-  clip-path: polygon(0 15%, 95% 0, 100% 85%, 5% 100%);
-  opacity: 0;
-  transform: translate(-14px, 5px) skewX(-7deg);
-  transition: opacity 180ms ease, transform 280ms var(--ease);
-}
-.project-cover-link:is(:hover, :focus-visible) .robot-word::before {
-  opacity: 1;
-  transform: translate(0, 0) skewX(-7deg);
-}
-@media (prefers-reduced-motion: reduce) {
-  .robot-word::before {
-    transition: none;
-    transform: none;
-  }
-  .project-cover-link:is(:hover, :focus-visible) .robot-word::before {
-    transform: none;
-  }
+  text-shadow: none;
 }
 .art-phone {
   position: absolute;
@@ -3120,4 +3087,62 @@ main:focus {
   .heading-frame {
     display: none;
   }
+}
+
+/* Shared punk typography: the blue is the same lettering, never a panel. */
+.art-bfr { container-type: inline-size; }
+.art-bfr .robot-word,
+.case-hero-art .art-bfr .robot-word {
+  display: grid;
+  left: 5%;
+  top: 31%;
+  font-size: 8.7cqw;
+  letter-spacing: -.035em;
+  line-height: .98;
+  transform: rotate(-6deg);
+  overflow: visible;
+}
+.robot-type { grid-area: 1 / 1; white-space: nowrap; }
+.robot-type-blue {
+  color: #29b9ef;
+  transform: translate(.055em, .03em);
+  transition: transform 260ms var(--ease);
+}
+.robot-type-pink { position: relative; color: #f365bd; }
+.robot-marks {
+  position: absolute;
+  inset: -24% -12%;
+  width: 124%;
+  height: 148%;
+  overflow: visible;
+  z-index: -1;
+}
+.robot-marks path {
+  stroke: #29b9ef;
+  stroke-width: 5;
+  stroke-linecap: square;
+  stroke-dasharray: 130;
+  stroke-dashoffset: 130;
+  opacity: 0;
+  transition: stroke-dashoffset 280ms var(--ease), opacity 160ms ease;
+}
+.robot-marks path:nth-child(2) { transition-delay: 35ms; stroke-width: 3; }
+.robot-marks path:nth-child(3) { transition-delay: 65ms; stroke-width: 7; }
+.robot-marks path:nth-child(4) { transition-delay: 95ms; stroke-width: 4; }
+.project-cover-link:is(:hover, :focus-visible) .robot-type-blue,
+.art-bfr.compact:is(:hover, :focus-visible) .robot-type-blue {
+  transform: translate(.08em, .045em);
+}
+.project-cover-link:is(:hover, :focus-visible) .robot-marks path,
+.art-bfr.compact:is(:hover, :focus-visible) .robot-marks path {
+  stroke-dashoffset: 0;
+  opacity: .9;
+}
+.art-bfr .phone-front, .case-hero-art .art-bfr .phone-front { left: 48%; width: 27%; }
+.art-bfr .phone-back, .case-hero-art .art-bfr .phone-back { left: 71%; width: 27%; }
+.art-bfr.compact:focus-visible { outline: 2px solid #29b9ef; outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) {
+  .robot-type-blue, .robot-marks path { transition: none; }
+  .project-cover-link:is(:hover, :focus-visible) .robot-type-blue,
+  .art-bfr.compact:is(:hover, :focus-visible) .robot-type-blue { transform: translate(.055em, .03em); }
 }

@@ -339,6 +339,21 @@ function Hero() {
   );
 }
 
+function RobotTitle() {
+  return (
+    <div className="robot-word" aria-hidden="true">
+      <svg className="robot-marks" viewBox="0 0 300 190" fill="none">
+        <path d="M10 55 102 23" />
+        <path d="m188 30 90-17" />
+        <path d="m4 138 66-22" />
+        <path d="m183 166 96-36" />
+      </svg>
+      <span className="robot-type robot-type-blue">SMALL<br />ROBOTS.</span>
+      <span className="robot-type robot-type-pink">SMALL<br />ROBOTS.</span>
+    </div>
+  );
+}
+
 export function ProjectArt({
   project,
   compact = false,
@@ -348,13 +363,9 @@ export function ProjectArt({
 }) {
   if (project.slug === "big-fight-small-robots")
     return (
-      <div className={`project-art art-bfr ${compact ? "compact" : ""}`}>
+      <div className={`project-art art-bfr ${compact ? "compact" : ""}`} tabIndex={compact ? 0 : undefined} aria-label={compact ? "Big Fight Small Robots: composição de Game UI" : undefined}>
         <span className="art-caption">PUNK / GAME UI / MOBILE</span>
-        <div className="robot-word" aria-hidden="true">
-          SMALL
-          <br />
-          ROBOTS.
-        </div>
+        <RobotTitle />
         <div className="art-phone phone-back">
           <Image
             src="/ASSETS/BigFightSmallRobots/3.png"
