@@ -2451,7 +2451,8 @@ main:focus {
   font-size: 1.28em;
   line-height: 1.02;
   letter-spacing: -0.055em;
-  margin-bottom: 0.08em;
+  /* Reserve space for Bodoni's descenders and the composition frame. */
+  margin-bottom: 0.24em;
 }
 .title-code {
   font-size: 0.88em;
@@ -2526,7 +2527,8 @@ main:focus {
 .title-design .kinetic-word::after {
   content: "";
   position: absolute;
-  inset: -0.06em -0.05em -0.02em;
+  /* The glyph ink extends below its line box, especially the italic g. */
+  inset: -0.06em -0.05em -0.18em;
   border: 1px dashed var(--accent);
   pointer-events: none;
   opacity: 0;
