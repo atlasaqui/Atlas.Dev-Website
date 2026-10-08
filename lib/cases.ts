@@ -128,20 +128,24 @@ export const cases: CaseStudy[] = [
   {
     slug: "bazar-solidario",
     number: "03",
-    title: "Bazar Solidário",
+    title: "ISAC Brechó",
     category: "UI MOBILE / FRONT-END",
     status: "Em desenvolvimento",
-    color: "#163F43",
+    color: "#00667A",
     summary:
-      "Peças com história. Uma experiência mobile de moda circular com propósito.",
+      "Estilo acessível, identidade local e moda circular. Da marca à experiência mobile de um brechó solidário.",
     role: "Design da interface, front-end React/TypeScript e adaptação ao contrato de cadastro do backend existente.",
     stack: ["React", "TypeScript", "Vite", "Figma", "API REST"],
     challenge:
       "Apresentar uma proposta de moda circular em uma interface que funciona no celular, conectando descoberta de peças, sacola e informações sobre o projeto.",
     decisions: [
       {
-        title: "Uma identidade acolhedora",
-        text: "Verde petróleo, marfim, aqua e lavanda combinam contraste e leveza. A tipografia editorial dá personalidade às chamadas; textos e controles mantêm leitura direta.",
+        title: "Uma identidade próxima de quem usa",
+        text: "O lettering do ISAC Brechó combina presença e legibilidade. Azul petróleo, laranja e marrom ancoram a marca; o creme aparece em detalhes, enquanto superfícies claras preservam a leitura. Imagens do litoral e do cotidiano aproximam a experiência do público.",
+      },
+      {
+        title: "Detalhes que pertencem à marca",
+        text: "Ícones próprios para roupas, acessórios, calçados e favoritos compartilham a mesma linguagem de traço. A documentação no Figma separa fundamentos, componentes, seções, telas e processo, conectando decisões visuais ao comportamento da interface.",
       },
       {
         title: "Navegação na mão",
@@ -157,21 +161,23 @@ export const cases: CaseStudy[] = [
     credits:
       "Projeto colaborativo no repositório de Mateus-F-Moura. Victor Monteiro contribui com design e front-end; o backend Spring Boot já existente é trabalho da colaboração.",
     images: [
-      { src: "/ASSETS/Bazar/home.png", caption: "Início · interface mobile" },
+      { src: "/ASSETS/Bazar/home-atual.jpg", caption: "Interface atual · marca, descoberta e categorias próprias" },
       {
-        src: "/ASSETS/Bazar/cover.png",
-        caption: "Identidade e apresentação do projeto",
+        src: "/ASSETS/Bazar/fundamentos.png",
+        caption: "Fundamentos · marca, paleta e tipografia documentadas no Figma",
         wide: true,
       },
+      { src: "/ASSETS/Bazar/secoes.png", caption: "Anatomia da interface · seções e decisões de composição", wide: true },
+      { src: "/ASSETS/Bazar/processo.png", caption: "Processo · do esboço às interações e aos estados da experiência", wide: true },
     ],
     links: [
       {
-        label: "Minha contribuição",
-        href: "https://github.com/Mateus-F-Moura/bazar-solidario/tree/feat/frontend-mobile/frontend",
+        label: "Repositório colaborativo",
+        href: "https://github.com/Mateus-F-Moura/bazar-solidario",
       },
       {
-        label: "Protótipo no Figma",
-        href: "https://www.figma.com/design/UNlqj03qJ6BsaAX9sUwxiL?node-id=3-19",
+        label: "Processo e design no Figma",
+        href: "https://www.figma.com/design/UNlqj03qJ6BsaAX9sUwxiL?node-id=93-1437",
       },
     ],
   },

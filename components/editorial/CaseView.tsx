@@ -16,6 +16,7 @@ import {
 } from "./Studio";
 import { Gallery } from "./Gallery";
 import { SectionHeading } from "./SectionStories";
+import { DevelopmentStatus } from "./DevelopmentStatus";
 
 function Comparison() {
   const [position, setPosition] = useState(50);
@@ -108,10 +109,10 @@ export default function CaseView({ project }: { project: CaseStudy }) {
               <span className="accent-text">.</span>
             </h1>
             <p className="case-summary">{project.summary}</p>
-            <div className="case-status">
+            {project.slug === "bazar-solidario" ? <DevelopmentStatus expanded /> : <div className="case-status">
               <span className="status-dot" />
               {project.status}
-            </div>
+            </div>}
           </div>
           <div className="case-hero-art">
             <ProjectArt project={project} compact />

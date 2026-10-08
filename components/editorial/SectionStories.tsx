@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import { Check, Copy, Crop, ArrowUpRight } from "lucide-react";
+import { CONTACT_EMAIL } from "@/lib/contact";
 
 const paths = {
   curate: "M8 16V3H30 M70 3H92V16 M92 28V39H70 M30 39H8V28",
@@ -217,7 +218,7 @@ export function CopyContact() {
   async function copy() {
     clearTimeout(timer.current);
     try {
-      await navigator.clipboard.writeText("victor@atlasaqui.dev");
+      await navigator.clipboard.writeText(CONTACT_EMAIL);
       setStatus("E-mail copiado. Vamos conversar.");
     } catch {
       setStatus("Use o endereço abaixo para entrar em contato.");

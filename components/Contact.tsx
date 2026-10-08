@@ -1,4 +1,5 @@
 import Reveal from './Reveal';
+import { CONTACT_COMPOSE_URL } from '@/lib/contact';
 
 export default function Contact() {
   return (
@@ -16,7 +17,9 @@ export default function Contact() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:victor@atlasaqui.dev"
+              href={CONTACT_COMPOSE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-7 py-3.5 rounded-sm2 bg-red-grad text-white font-semibold shadow-glow hover:brightness-110 transition"
             >
               Enviar E-mail

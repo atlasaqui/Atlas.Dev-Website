@@ -116,7 +116,7 @@ export const PROJECTS: Project[] = [
       'Redesign completo do site do clássico jogo da SEGA. Experiência web imersiva inspirada na estética graffiti e na energia urbana do jogo original.',
     tags: ['SEGA', 'Redesign', 'Front-End'],
     filterTags: ['frontend', 'ui-ux'],
-    thumb: '',
+    thumb: '/ASSETS/jet-set-radio-card.png',
     thumbVideo: '/ASSETS/JetSetRadio/1.mp4',
     palette: ['#003fb4', '#e8b800', '#ff2800', '#00c850'],
     gradient: 'linear-gradient(135deg,#003fb4,#e8b800)',
