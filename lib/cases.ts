@@ -141,11 +141,11 @@ export const cases: CaseStudy[] = [
     decisions: [
       {
         title: "Uma identidade próxima de quem usa",
-        text: "O lettering do ISAC Brechó combina presença e legibilidade. Azul petróleo, laranja e marrom ancoram a marca; o creme aparece em detalhes, enquanto superfícies claras preservam a leitura. Imagens do litoral e do cotidiano aproximam a experiência do público.",
+        text: "A marca combina um cabide minimalista com a assinatura compacta ISAC BRECHÓ. Azul petróleo, laranja e turquesa dão presença à interface; superfícies claras preservam a leitura e o cabeçalho deixa mais espaço para o conteúdo.",
       },
       {
         title: "Detalhes que pertencem à marca",
-        text: "Ícones próprios para roupas, acessórios, calçados e favoritos compartilham a mesma linguagem de traço. A documentação no Figma separa fundamentos, componentes, seções, telas e processo, conectando decisões visuais ao comportamento da interface.",
+        text: "Camiseta simétrica, acessório geométrico, tênis e coração simples compartilham a mesma linguagem de traço. As categorias e informações das peças usam cores vivas com contraste, preservando a navegação inferior aprovada. A documentação no Figma separa fundamentos, componentes, seções, telas e processo, conectando decisões visuais ao comportamento da interface.",
       },
       {
         title: "Navegação na mão",
@@ -161,7 +161,9 @@ export const cases: CaseStudy[] = [
     credits:
       "Projeto colaborativo no repositório de Mateus-F-Moura. Victor Monteiro contribui com design e front-end; o backend Spring Boot já existente é trabalho da colaboração.",
     images: [
-      { src: "/ASSETS/Bazar/home-atual.jpg", caption: "Interface atual · marca, descoberta e categorias próprias" },
+      { src: "/ASSETS/Bazar/home-atual.png", caption: "Interface atual · cabide, marca compacta e categorias com cores vivas" },
+      { src: "/ASSETS/Bazar/apresentacao-atual.png", caption: "Apresentação atualizada · identidade, decisões e processo no Figma", wide: true },
+      { src: "/ASSETS/Bazar/componentes-atual.png", caption: "Componentes atualizados · marca, ícones minimalistas e estados", wide: true },
       {
         src: "/ASSETS/Bazar/fundamentos.png",
         caption: "Fundamentos · marca, paleta e tipografia documentadas no Figma",
