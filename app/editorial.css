@@ -3020,12 +3020,12 @@ main:focus {
 }
 
 /* ISAC: its own visual identity inside the Atlas editorial composition. */
-.art-bazar { background: #e6eeeb; color: #00667a; }
+.art-bazar { background: #e6eeeb; color: #0b6676; }
 .art-bazar .bazar-word { width: 49%; left: 5%; top: 23%; font-family: var(--sans); font-size: clamp(18px, 2vw, 30px); letter-spacing: -0.7px; }
 .isac-case-logo { display: block; width: min(100%, 230px); height: 120px; object-fit: contain; object-position: left center; margin-bottom: 22px; }
 .bazar-word p { margin: 0; }
 .bazar-word em { font-family: var(--serif); color: #40291e; }
-.art-bazar .bazar-phone { border-color: #00667a; background: #faf9f5; }
+.art-bazar .bazar-phone { border-color: #0b6676; background: #faf9f5; }
 .case-hero-art .art-bazar .bazar-word { left: 6%; top: 23%; width: 46%; font-size: clamp(26px, 3.3vw, 46px); }
 .case-hero-art .isac-case-logo { width: 290px; height: 155px; }
 .development-note { margin: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -3044,8 +3044,8 @@ main:focus {
 .development-chapters { padding: 0 0 24px 46px; font-size: 14px; line-height: 1.7; }
 .development-chapters > p { max-width: 650px; margin: 0 0 24px; }
 .development-chapters ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
-.development-chapters li { position: relative; border-left: 2px solid #00667a; padding-left: 16px; }
-.development-chapters li span { display: block; font-family: var(--mono); font-size: 9px; letter-spacing: .08em; color: #00667a; }
+.development-chapters li { position: relative; border-left: 2px solid #0b6676; padding-left: 16px; }
+.development-chapters li span { display: block; font-family: var(--mono); font-size: 9px; letter-spacing: .08em; color: #0b6676; }
 .development-chapters li strong { display: block; margin: 5px 0; font-size: 15px; font-weight: 500; }
 .development-chapters li small { display: block; font-size: 12px; color: #645b50; }
 .development-chapters .development-next { border-left-style: dashed; border-left-color: var(--accent); }
@@ -3057,7 +3057,7 @@ main:focus {
 .development-note[open] .development-chapters li:nth-child(3) { animation-delay: 140ms; }
 @keyframes chapter-arrives { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
 .development-note-large .development-chapters ol { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.development-note { margin: 0; border: 1px solid #00667a; }
+.development-note { margin: 0; border: 1px solid #0b6676; }
 .development-note summary { position: relative; padding: 22px 24px; background: #163f43; color: #fffcf7; border-left: 4px solid #f27b2d; gap: 18px; }
 .development-note summary strong { font-size: 21px; line-height: 1.25; letter-spacing: -.4px; }
 .development-project-name { display: block; margin-bottom: 8px; font-family: var(--mono); font-size: 9px; letter-spacing: .08em; color: #bde6df; }
@@ -3067,7 +3067,7 @@ main:focus {
 .development-note .development-toggle { color: #ffb47c; font-size: 28px; }
 .development-note .development-chapters { padding: 25px 24px; background: var(--surface); }
 .development-note-large { margin: 30px 0 0; }
-.project-bazar-solidario .project-cover-link { border: 1px solid #00667a; border-top: 0; }
+.project-bazar-solidario .project-cover-link { border: 1px solid #0b6676; border-top: 0; }
 @media (max-width: 700px) {
   .development-note summary { padding: 20px 16px; gap: 12px; }
   .development-note summary strong { font-size: 19px; }
@@ -3184,5 +3184,5 @@ main:focus {
 .art-bfr.compact:focus-visible { outline-color: var(--robot-blue); }
 @media (prefers-reduced-motion: reduce) { .robot-cutouts path { transition: none; } }
 
-/* Compact hanger signature follows the current ISAC app. */
-.art-bazar .isac-case-logo,.case-hero-art .isac-case-logo{width:min(100%,290px);height:auto;aspect-ratio:280/88;margin-bottom:20px}
+/* Official ISAC identity, original proportions. */
+.art-bazar .isac-case-logo,.case-hero-art .isac-case-logo{width:min(78%,200px);height:auto;aspect-ratio:498/321;margin-bottom:20px}

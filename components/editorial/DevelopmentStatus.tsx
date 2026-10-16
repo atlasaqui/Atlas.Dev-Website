@@ -15,7 +15,7 @@ export function DevelopmentStatus({ expanded = false }: { expanded?: boolean }) 
       <div className="development-chapters">
         <p>Uma experiência que evolui por etapas. Explore o que já existe e conheça as próximas integrações.</p>
         <ol>
-          <li><span>01 / DESENHAR</span><strong>Identidade e sistema visual</strong><small>Marca, paleta, ícones próprios e documentação no Figma.</small></li>
+          <li><span>01 / DESENHAR</span><strong>Identidade e sistema visual</strong><small>Marca oficial da equipe aplicada à interface, paleta, componentes e documentação no Figma.</small></li>
           <li><span>02 / CONSTRUIR</span><strong>Interface e cadastro</strong><small>Front-end mobile e cadastro adaptado ao contrato da API. Catálogo e checkout demonstrativos.</small></li>
           <li className="development-next"><span>03 / CONECTAR · PRÓXIMA ETAPA</span><strong>Login e pedidos reais</strong><small>Integrações ainda por implementar. Novas atualizações vão dar continuidade a este trabalho.</small></li>
         </ol>

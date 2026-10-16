@@ -178,7 +178,7 @@ function Workbench() {
     {
       name: "UI mobile",
       project: cases[2],
-      images: ["/ASSETS/Bazar/home-atual.png"],
+      images: ["/ASSETS/Bazar/home-outubro.png"],
     },
   ];
   const current = previews[selected];
@@ -402,12 +402,12 @@ export function ProjectArt({
       <div className="project-art art-bazar">
         <span className="art-caption">MODA CIRCULAR / IDENTIDADE LOCAL</span>
         <div className="bazar-word" aria-hidden="true">
-          <Image className="isac-case-logo" src="/ASSETS/Bazar/isac-logo.svg" alt="" width={280} height={88} />
+          <Image className="isac-case-logo" src="/ASSETS/Bazar/isac-oficial.svg" alt="" width={498} height={321} />
           <p>Estilo de perto.<br /><em>Histórias que continuam.</em></p>
         </div>
         <div className="bazar-phone">
           <Image
-            src="/ASSETS/Bazar/home-atual.png"
+            src="/ASSETS/Bazar/home-outubro.png"
             alt="Tela inicial mobile do ISAC Brechó"
             fill
             sizes="(max-width: 600px) 36vw, 220px"

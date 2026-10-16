@@ -131,7 +131,7 @@ export const cases: CaseStudy[] = [
     title: "ISAC Brechó",
     category: "UI MOBILE / FRONT-END",
     status: "Em desenvolvimento",
-    color: "#00667A",
+    color: "#0B6676",
     summary:
       "Estilo acessível, identidade local e moda circular. Da marca à experiência mobile de um brechó solidário.",
     role: "Design da interface, front-end React/TypeScript e adaptação ao contrato de cadastro do backend existente.",
@@ -141,7 +141,7 @@ export const cases: CaseStudy[] = [
     decisions: [
       {
         title: "Uma identidade próxima de quem usa",
-        text: "A marca combina um cabide minimalista com a assinatura compacta ISAC BRECHÓ. Azul petróleo, laranja e turquesa dão presença à interface; superfícies claras preservam a leitura e o cabeçalho deixa mais espaço para o conteúdo.",
+        text: "A identidade oficial fornecida pela equipe reúne a palmeira, o botão e a assinatura ISAC BRECHÓ. O azul-esverdeado e o laranja da marca orientam a interface, com fundos claros e versões próprias para o cabeçalho e o ícone do aplicativo.",
       },
       {
         title: "Detalhes que pertencem à marca",
@@ -159,18 +159,20 @@ export const cases: CaseStudy[] = [
     result:
       "Front-end mobile com cadastro conectado ao contrato da API e testes do cliente. Catálogo, eventos e checkout são demonstrativos; login, pedidos e vendas reais ainda não estão implementados.",
     credits:
-      "Projeto colaborativo no repositório de Mateus-F-Moura. Victor Monteiro contribui com design e front-end; o backend Spring Boot já existente é trabalho da colaboração.",
+      "Projeto colaborativo no repositório de Mateus-F-Moura. A marca oficial foi fornecida pela equipe. Victor Monteiro contribui com design da interface, documentação visual e front-end; o backend Spring Boot já existente é trabalho da colaboração.",
     images: [
-      { src: "/ASSETS/Bazar/home-atual.png", caption: "Interface atual · cabide, marca compacta e categorias com cores vivas" },
-      { src: "/ASSETS/Bazar/apresentacao-atual.png", caption: "Apresentação atualizada · identidade, decisões e processo no Figma", wide: true },
-      { src: "/ASSETS/Bazar/componentes-atual.png", caption: "Componentes atualizados · marca, ícones minimalistas e estados", wide: true },
+      { src: "/ASSETS/Bazar/marca-oficial.png", caption: "Marca oficial da equipe · assinatura, símbolo, ícone e paleta", wide: true },
+      { src: "/ASSETS/Bazar/catalogo-outubro.png", caption: "Catálogo · peças sem marcas de luxo em destaque e estados da navegação revisados" },
+      { src: "/ASSETS/Bazar/home-outubro.png", caption: "Interface atual · marca oficial e navegação mobile" },
+      { src: "/ASSETS/Bazar/apresentacao-outubro.png", caption: "Apresentação atualizada · identidade, decisões e processo no Figma", wide: true },
+      { src: "/ASSETS/Bazar/componentes-outubro.png", caption: "Componentes atualizados · marca, ícones minimalistas e estados", wide: true },
       {
-        src: "/ASSETS/Bazar/fundamentos.png",
+        src: "/ASSETS/Bazar/fundamentos-outubro.png",
         caption: "Fundamentos · marca, paleta e tipografia documentadas no Figma",
         wide: true,
       },
-      { src: "/ASSETS/Bazar/secoes.png", caption: "Anatomia da interface · seções e decisões de composição", wide: true },
-      { src: "/ASSETS/Bazar/processo.png", caption: "Processo · do esboço às interações e aos estados da experiência", wide: true },
+      { src: "/ASSETS/Bazar/secoes-outubro.png", caption: "Anatomia da interface · seções e decisões de composição", wide: true },
+      { src: "/ASSETS/Bazar/processo-outubro.png", caption: "Processo · do esboço às interações e aos estados da experiência", wide: true },
     ],
     links: [
       {
@@ -179,7 +181,7 @@ export const cases: CaseStudy[] = [
       },
       {
         label: "Processo e design no Figma",
-        href: "https://www.figma.com/design/UNlqj03qJ6BsaAX9sUwxiL?node-id=93-1437",
+        href: "https://www.figma.com/design/UNlqj03qJ6BsaAX9sUwxiL?node-id=123-907",
       },
     ],
   },
