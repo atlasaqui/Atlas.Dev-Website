@@ -418,6 +418,18 @@ export function ProjectArt({
         </span>
       </div>
     );
+  if (project.slug === "caderno-ambar")
+    return (
+      <div className="project-art art-ambar">
+        <Image
+          src="/ASSETS/CadernoAmbar/inicio.png"
+          alt="Caderno Âmbar: apresentação e consulta de casos fictícios"
+          fill
+          sizes="(max-width: 700px) 100vw, 55vw"
+        />
+        <span className="art-caption">CONSULTAR / COMPARAR / CONFERIR</span>
+      </div>
+    );
   return (
     <div className="project-art art-bode" tabIndex={compact ? 0 : undefined} aria-label={compact ? "Prévia do projeto Bode do Nô" : undefined}>
       <Image

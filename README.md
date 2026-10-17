@@ -4,6 +4,8 @@ Portfólio de design de interface e front-end. A identidade editorial combina to
 
 ## Trabalhos principais
 
+- **Caderno Âmbar:** estudo funcional de consulta HTTP, extração de HTML, comparação de registros e conferência. Case em `/projetos/caderno-ambar`; demonstração pública em `/demos/caderno-ambar/index.html`, com fonte fictícia e tutorial por ações. Implementado em JavaScript, sem backend Python.
+
 - **Big Fight Small Robots:** telas e estudos de Game UI, com galeria de 17 imagens.
 - **Rastros:** jogo publicado, programação e UX, com créditos da equipe e links para código e itch.io.
 - **Bazar Solidário:** experiência mobile em React/TypeScript em desenvolvimento. O case distingue o cadastro integrado dos fluxos demonstrativos.

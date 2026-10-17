@@ -3186,3 +3186,6 @@ main:focus {
 
 /* Official ISAC identity, original proportions. */
 .art-bazar .isac-case-logo,.case-hero-art .isac-case-logo{width:min(78%,200px);height:auto;aspect-ratio:498/321;margin-bottom:20px}
+.art-ambar{background:#f4f0e8}
+.art-ambar>img{object-fit:cover;object-position:top center}
+.art-ambar .art-caption{background:#244738;color:#f5ecd9;padding:7px 10px;top:auto;bottom:18px}

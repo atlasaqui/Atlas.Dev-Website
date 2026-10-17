@@ -227,6 +227,32 @@ export const cases: CaseStudy[] = [
     ],
     links: original("bodedono").links,
   },
+  {
+    slug: "caderno-ambar",
+    number: "05",
+    title: "Caderno Âmbar",
+    category: "APLICAÇÃO WEB / CONSULTA DE DADOS",
+    status: "Estudo funcional publicado",
+    color: "#AD875B",
+    summary: "Saiba o que mudou e o que precisa de você. Um laboratório de acompanhamento de casos com consulta, comparação e conferência.",
+    role: "Concepção do estudo, identidade visual, interface responsiva, lógica de consulta e documentação técnica, com apoio de IA na implementação e nas verificações.",
+    stack: ["HTML", "CSS", "JavaScript", "HTTP / fetch", "DOMParser", "CSV"],
+    challenge: "Tornar uma rotina de consulta compreensível: escolher um caso, verificar sua fonte e mostrar a diferença entre a informação anterior e a encontrada. O estudo usa casos fictícios para permitir explorar todo o percurso sem dados pessoais ou sistemas judiciais.",
+    decisions: [
+      { title: "Uma mudança que pode ser conferida", text: "O caderno começa vazio. Ao adicionar CIV-001, o registro inicial diz Aguardando agendamento. A consulta lê uma página HTML separada do laboratório e encontra Audiência agendada para 22/10 às 14h. O detalhe coloca as duas informações lado a lado." },
+      { title: "Aprender fazendo", text: "O tutorial destaca os controles e avança por 14 ações reais: adicionar, selecionar, abrir a fonte, consultar, comparar, conferir, buscar, filtrar, exportar e consultar histórico e ajuda. Não há uma sequência de cliques simulados." },
+      { title: "Cada ferramenta com uma função", text: "HTML e CSS estruturam a experiência. JavaScript organiza o estado da sessão; fetch faz a consulta HTTP e DOMParser extrai os campos do HTML. Blob gera o CSV com os itens visíveis. A documentação explica execução, comportamento e limites." },
+      { title: "Falhas e limites explícitos", text: "A consulta valida o status HTTP, tem limite de espera e preserva a informação anterior quando a fonte falha. Repetir a consulta à mesma fonte não inventa uma atualização. Esta versão não executa Python, Requests, Beautiful Soup ou Playwright e não consulta tribunais." },
+    ],
+    result: "Aplicação acessível sem cadastro, com consulta real à fonte fictícia, comparação antes/depois, registro de conferência, filtros, histórico e exportação CSV. Os dados ficam apenas na sessão e reiniciam ao recarregar.",
+    credits: "Projeto independente de estudo de Victor Monteiro, desenvolvido com apoio de IA. Fotografias ilustrativas do Unsplash. Não representa um escritório nem uma contratação; não oferece orientação jurídica.",
+    images: [
+      { src: "/ASSETS/CadernoAmbar/inicio.png", caption: "Apresentação do projeto · objetivo, identidade e entrada para o treino", wide: true },
+      { src: "/ASSETS/CadernoAmbar/consulta.png", caption: "Consulta executada · comparação entre o registro anterior e o encontrado na fonte", wide: true },
+      { src: "/ASSETS/CadernoAmbar/tutorial-mobile.png", caption: "Tutorial ativo no celular · cada ação é realizada pela pessoa usando o site" },
+    ],
+    links: [{ label: "Abrir aplicação e experimentar", href: "/demos/caderno-ambar/index.html" }],
+  },
 ];
 
 export const complementary = PROJECTS.filter((project) =>
