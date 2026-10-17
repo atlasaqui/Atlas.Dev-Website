@@ -422,10 +422,11 @@ export function ProjectArt({
     return (
       <div className="project-art art-ambar">
         <Image
-          src="/ASSETS/CadernoAmbar/inicio.png"
-          alt="Caderno Âmbar: apresentação e consulta de casos fictícios"
+          src="/ASSETS/CadernoAmbar/capa-vetorial.svg"
+          alt="Caderno Âmbar: consultar, comparar e conferir movimentações, com laboratório Python"
           fill
-          sizes="(max-width: 700px) 100vw, 55vw"
+          sizes="(max-width: 700px) 100vw, 100vw"
+          unoptimized
         />
         <span className="art-caption">CONSULTAR / COMPARAR / CONFERIR</span>
       </div>
@@ -447,6 +448,7 @@ function ProjectCard({ project }: { project: CaseStudy }) {
   return (
     <Reveal className={`project-card project-${project.slug}`}>
       {project.slug === "bazar-solidario" && <DevelopmentStatus />}
+      {project.slug === "caderno-ambar" && <DevelopmentStatus variant="ambar" />}
       <Link
         href={`/projetos/${project.slug}`}
         className="project-cover-link"

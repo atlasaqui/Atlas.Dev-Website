@@ -109,7 +109,7 @@ export default function CaseView({ project }: { project: CaseStudy }) {
               <span className="accent-text">.</span>
             </h1>
             <p className="case-summary">{project.summary}</p>
-            {project.slug === "bazar-solidario" ? <DevelopmentStatus expanded /> : <div className="case-status">
+            {project.slug === "bazar-solidario" || project.slug === "caderno-ambar" ? <DevelopmentStatus expanded variant={project.slug === "caderno-ambar" ? "ambar" : "isac"} /> : <div className="case-status">
               <span className="status-dot" />
               {project.status}
             </div>}

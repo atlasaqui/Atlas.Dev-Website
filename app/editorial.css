@@ -3187,5 +3187,13 @@ main:focus {
 /* Official ISAC identity, original proportions. */
 .art-bazar .isac-case-logo,.case-hero-art .isac-case-logo{width:min(78%,200px);height:auto;aspect-ratio:498/321;margin-bottom:20px}
 .art-ambar{background:#f4f0e8}
-.art-ambar>img{object-fit:cover;object-position:top center}
-.art-ambar .art-caption{background:#244738;color:#f5ecd9;padding:7px 10px;top:auto;bottom:18px}
+.art-ambar>img{object-fit:contain;object-position:center}
+.art-ambar .art-caption{display:none}
+.development-ambar{border-color:#ad875b}
+.development-ambar summary{background:#233f34;border-left-color:#ad875b}
+.development-ambar .development-project-name{color:#e4cfaa}
+.development-ambar .development-invitation,.development-ambar .development-toggle{color:#e7c38a}
+.development-ambar .development-lock{stroke:#e7c38a}
+.development-ambar .development-chapters li{border-left-color:#ad875b}
+.development-ambar .development-chapters li span{color:#896335}
+.project-caderno-ambar .project-cover-link{border:1px solid #ad875b;border-top:0}
