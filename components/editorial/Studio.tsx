@@ -679,6 +679,12 @@ function About() {
           Crio interfaces para web e jogos, com atenção ao que se vê e ao que
           acontece quando alguém interage.
         </p>
+        <p>
+          Também elaboro e atualizo documentos para acompanhar a evolução dos
+          projetos: quais testes foram realizados, seus resultados, o que mudou
+          em cada entrega e os próximos passos. Esses registros ajudam a equipe
+          a acompanhar o trabalho e dar continuidade ao desenvolvimento.
+        </p>
         <div className="education">
           <div>
             <span>FORMAÇÃO</span>

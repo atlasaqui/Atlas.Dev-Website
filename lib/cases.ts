@@ -193,7 +193,7 @@ export const cases: CaseStudy[] = [
     status: "Em desenvolvimento",
     color: "#AD875B",
     summary: "Saiba o que mudou e o que precisa de você. Um laboratório de acompanhamento de casos com consulta, comparação e conferência.",
-    role: "Concepção do estudo, identidade visual, interface responsiva, lógica de consulta e documentação técnica, com apoio de IA na implementação e nas verificações.",
+    role: "Concepção do estudo, identidade visual, interface responsiva e lógica de consulta. Elaboração e atualização de documentação técnica com os testes realizados, seus resultados, as alterações de cada entrega e os próximos passos do projeto. Apoio de IA na implementação e nas verificações.",
     stack: ["JavaScript", "Python (laboratório local)", "Requests", "Beautiful Soup", "Playwright", "HTML / CSS"],
     challenge: "Tornar uma rotina de consulta compreensível: escolher um caso, verificar sua fonte e mostrar a diferença entre a informação anterior e a encontrada. O estudo usa casos fictícios para permitir explorar todo o percurso sem dados pessoais ou sistemas judiciais.",
     decisions: [
