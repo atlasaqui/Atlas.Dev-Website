@@ -206,8 +206,7 @@ export const cases: CaseStudy[] = [
     result: "Demonstração web pública com comparação, conferência e CSV, além de um laboratório local Python com Requests, Beautiful Soup e Playwright. O robô foi executado e gerou relatório JSON, capturas, CSV e trace; os sete testes passaram. O guia explica como instalar, repetir e entender cada etapa. Os dados são fictícios e a lista da interface reinicia ao recarregar.",
     credits: "Projeto independente de estudo de Victor Monteiro, desenvolvido com apoio de IA. Fotografias ilustrativas do Unsplash. Não representa um escritório nem uma contratação; não oferece orientação jurídica.",
     images: [
-      { src: "/ASSETS/CadernoAmbar/capa-vetorial.svg", caption: "Caderno Âmbar · identidade e percurso de consulta, comparação e conferência", wide: true },
-      { src: "/ASSETS/CadernoAmbar/inicio.png", caption: "Apresentação do projeto · objetivo, identidade e entrada para o treino", wide: true },
+      { src: "/ASSETS/CadernoAmbar/inicio-hd.png", caption: "Tela inicial real · identidade, fotografia e entrada para o laboratório em alta resolução", wide: true },
       { src: "/ASSETS/CadernoAmbar/consulta.png", caption: "Consulta executada · comparação entre o registro anterior e o encontrado na fonte", wide: true },
       { src: "/ASSETS/CadernoAmbar/python-playwright.png", caption: "Laboratório Python · captura gerada pelo robô Playwright após verificar a resposta de Requests e Beautiful Soup", wide: true },
       { src: "/ASSETS/CadernoAmbar/tutorial-mobile.png", caption: "Tutorial ativo no celular · cada ação é realizada pela pessoa usando o site" },

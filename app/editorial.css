@@ -3188,6 +3188,7 @@ main:focus {
 .art-bazar .isac-case-logo,.case-hero-art .isac-case-logo{width:min(78%,200px);height:auto;aspect-ratio:498/321;margin-bottom:20px}
 .art-ambar{background:#f4f0e8}
 .art-ambar>img{object-fit:contain;object-position:center}
+.project-card .art-ambar,.case-hero-art .art-ambar{height:auto;aspect-ratio:1905/965}
 .art-ambar .art-caption{display:none}
 .development-ambar{border-color:#ad875b}
 .development-ambar summary{background:#233f34;border-left-color:#ad875b}

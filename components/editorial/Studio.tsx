@@ -422,8 +422,8 @@ export function ProjectArt({
     return (
       <div className="project-art art-ambar">
         <Image
-          src="/ASSETS/CadernoAmbar/capa-vetorial.svg"
-          alt="Caderno Âmbar: consultar, comparar e conferir movimentações, com laboratório Python"
+          src="/ASSETS/CadernoAmbar/inicio-hd.png"
+          alt="Tela inicial real do Caderno Âmbar, com apresentação, fotografia do escritório e acesso ao laboratório"
           fill
           sizes="(max-width: 700px) 100vw, 100vw"
           unoptimized
