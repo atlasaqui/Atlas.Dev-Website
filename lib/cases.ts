@@ -212,7 +212,8 @@ export const cases: CaseStudy[] = [
       { src: "/ASSETS/CadernoAmbar/tutorial-mobile.png", caption: "Tutorial ativo no celular · cada ação é realizada pela pessoa usando o site" },
     ],
     links: [
-      { label: "Abrir demonstração web", href: "/demos/caderno-ambar/index.html" },
+      { label: "Abrir Caderno Âmbar", href: "https://caderno-ambar.vercel.app/" },
+      { label: "Código e documentação", href: "https://github.com/atlasaqui/caderno-ambar" },
       { label: "Baixar laboratório Python e guia", href: "/downloads/caderno-ambar-laboratorio-python.zip" },
     ],
   },
