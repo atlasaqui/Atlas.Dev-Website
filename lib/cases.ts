@@ -236,22 +236,27 @@ export const cases: CaseStudy[] = [
     color: "#AD875B",
     summary: "Saiba o que mudou e o que precisa de você. Um laboratório de acompanhamento de casos com consulta, comparação e conferência.",
     role: "Concepção do estudo, identidade visual, interface responsiva, lógica de consulta e documentação técnica, com apoio de IA na implementação e nas verificações.",
-    stack: ["HTML", "CSS", "JavaScript", "HTTP / fetch", "DOMParser", "CSV"],
+    stack: ["JavaScript", "Python (laboratório local)", "Requests", "Beautiful Soup", "Playwright", "HTML / CSS"],
     challenge: "Tornar uma rotina de consulta compreensível: escolher um caso, verificar sua fonte e mostrar a diferença entre a informação anterior e a encontrada. O estudo usa casos fictícios para permitir explorar todo o percurso sem dados pessoais ou sistemas judiciais.",
     decisions: [
       { title: "Uma mudança que pode ser conferida", text: "O caderno começa vazio. Ao adicionar CIV-001, o registro inicial diz Aguardando agendamento. A consulta lê uma página HTML separada do laboratório e encontra Audiência agendada para 22/10 às 14h. O detalhe coloca as duas informações lado a lado." },
       { title: "Aprender fazendo", text: "O tutorial destaca os controles e avança por 14 ações reais: adicionar, selecionar, abrir a fonte, consultar, comparar, conferir, buscar, filtrar, exportar e consultar histórico e ajuda. Não há uma sequência de cliques simulados." },
       { title: "Cada ferramenta com uma função", text: "HTML e CSS estruturam a experiência. JavaScript organiza o estado da sessão; fetch faz a consulta HTTP e DOMParser extrai os campos do HTML. Blob gera o CSV com os itens visíveis. A documentação explica execução, comportamento e limites." },
-      { title: "Falhas e limites explícitos", text: "A consulta valida o status HTTP, tem limite de espera e preserva a informação anterior quando a fonte falha. Repetir a consulta à mesma fonte não inventa uma atualização. Esta versão não executa Python, Requests, Beautiful Soup ou Playwright e não consulta tribunais." },
+      { title: "Python com responsabilidades verificáveis", text: "No laboratório local, a API usa Requests para buscar o portal fictício e Beautiful Soup para extrair seus campos. Python compara o registro anterior com o atual e devolve o resultado ao painel. A rotina Playwright abre o navegador, adiciona e consulta um caso, confere o antes e depois e valida o CSV baixado. O pacote inclui código, guia de estudo e evidências de uma execução." },
+      { title: "Falhas e limites explícitos", text: "Sete testes cobrem HTTP, ausência de mudança, campos ausentes, códigos inválidos, HTTP 404, JSON inválido e ativação da consulta Python. A demonstração online continua estática e usa JavaScript; o backend Python e o robô Playwright são executados localmente pelo pacote disponível para download. Nenhuma versão consulta tribunais." },
     ],
-    result: "Aplicação acessível sem cadastro, com consulta real à fonte fictícia, comparação antes/depois, registro de conferência, filtros, histórico e exportação CSV. Os dados ficam apenas na sessão e reiniciam ao recarregar.",
+    result: "Demonstração web pública com comparação, conferência e CSV, além de um laboratório local Python com Requests, Beautiful Soup e Playwright. O robô foi executado e gerou relatório JSON, capturas, CSV e trace; os sete testes passaram. O guia explica como instalar, repetir e entender cada etapa. Os dados são fictícios e a lista da interface reinicia ao recarregar.",
     credits: "Projeto independente de estudo de Victor Monteiro, desenvolvido com apoio de IA. Fotografias ilustrativas do Unsplash. Não representa um escritório nem uma contratação; não oferece orientação jurídica.",
     images: [
       { src: "/ASSETS/CadernoAmbar/inicio.png", caption: "Apresentação do projeto · objetivo, identidade e entrada para o treino", wide: true },
       { src: "/ASSETS/CadernoAmbar/consulta.png", caption: "Consulta executada · comparação entre o registro anterior e o encontrado na fonte", wide: true },
+      { src: "/ASSETS/CadernoAmbar/python-playwright.png", caption: "Laboratório Python · captura gerada pelo robô Playwright após verificar a resposta de Requests e Beautiful Soup", wide: true },
       { src: "/ASSETS/CadernoAmbar/tutorial-mobile.png", caption: "Tutorial ativo no celular · cada ação é realizada pela pessoa usando o site" },
     ],
-    links: [{ label: "Abrir aplicação e experimentar", href: "/demos/caderno-ambar/index.html" }],
+    links: [
+      { label: "Abrir demonstração web", href: "/demos/caderno-ambar/index.html" },
+      { label: "Baixar laboratório Python e guia", href: "/downloads/caderno-ambar-laboratorio-python.zip" },
+    ],
   },
 ];
 
