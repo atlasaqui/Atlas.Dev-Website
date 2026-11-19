@@ -3425,3 +3425,19 @@ main:focus {
 .education-diploma:is(:hover,:focus-visible) { background:#3b3b36; }
 .education-next { margin-top:24px; }
 @media(max-width:650px) { .education-entry { grid-template-columns:1fr; } }
+
+@media (max-width: 700px) {
+  .studio-header nav.is-open { max-height:calc(100dvh - 68px); overflow-y:auto; }
+  .studio-header nav a { min-height:44px; }
+  .profile-two-columns { grid-template-columns:minmax(0,1fr); }
+  .profile-page-heading h1,.profile-bio h2,.education-course h2 { overflow-wrap:break-word; }
+  .profile-api .github-section,.profile-page .projects-grid { min-width:0; }
+  .project-meta { flex-wrap:wrap; row-gap:5px; }
+  .project-meta > span:first-child { max-width:100%; }
+}
+@media (max-width: 375px) {
+  .skill-tools { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:4px; }
+  .skill-tools li { overflow-wrap:anywhere; }
+  .github-profile-action { flex-wrap:wrap; }
+  .art-ambar .translate-word p { font-size:clamp(13px,5.4cqw,28px); }
+}
