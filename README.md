@@ -1,6 +1,6 @@
 # atlas.dev — Victor Monteiro
 
-[![Atlas.dev — portfólio de Victor Monteiro de design e desenvolvimento](docs/banner-portfolio.png)](https://atlasaquidev.vercel.app/)
+[![Atlas.dev — portfólio de Victor Monteiro de design e desenvolvimento](docs/atlas-dev-banner-editorial.png)](https://atlasaquidev.vercel.app/)
 
 Portfólio pessoal de UI/UX, desenvolvimento web e Game UI, publicado em https://atlasaquidev.vercel.app/.
 
