@@ -56,7 +56,6 @@ APK de homologação: `public/downloads/ISAC-Brecho-0.1.1-sandbox.apk`.
 SHA-256: `394B214593C329A109C48EBF93AEB404C2BA9BA97CDC25371285CD161BDEDDBF`.
 O APK utiliza pagamentos de teste e não inclui contas, senhas ou chaves de API neste portfólio.
 
-Veja `ENTREGA-ATIVIDADE.md` para o roteiro de vídeo e os itens de entrega.
 
 ## Um passeio pelo portfólio
 
@@ -87,5 +86,3 @@ flowchart LR
 ~~~
 
 A rota do Next.js chama GET /users/atlasaqui/repos, ordenado pela atualização, e retorna nome, descrição, linguagem, link e data. Home e Sobre exibem os resultados e oferecem nova tentativa em caso de falha. A Web Animations API também é utilizada no navegador para animar as letras da Home. As integrações dos projetos apresentados são descritas nos respectivos cases.
-
-A lista de links para entrega e o roteiro de gravação estão no [guia da atividade](ENTREGA-ATIVIDADE.md).
