@@ -55,3 +55,35 @@ SHA-256: `394B214593C329A109C48EBF93AEB404C2BA9BA97CDC25371285CD161BDEDDBF`.
 O APK utiliza pagamentos de teste e não inclui contas, senhas ou chaves de API neste portfólio.
 
 Veja `ENTREGA-ATIVIDADE.md` para o roteiro de vídeo e os itens de entrega.
+
+## Um passeio pelo portfólio
+
+O menu do topo liga as cinco páginas do currículo. Na Home, a frase de abertura animada apresenta o trabalho e as prévias levam aos estudos de caso. As páginas internas detalham minhas ferramentas, minha formação e o que fiz nos projetos em equipe.
+
+| Página | O que encontrar |
+| --- | --- |
+| [Home](https://atlasaquidev.vercel.app/) | Apresentação, prévias interativas, ferramentas e atividade no GitHub |
+| [Sobre](https://atlasaquidev.vercel.app/sobre) | Perfil, ferramentas por área e tecnologias do próprio portfólio |
+| [Formação](https://atlasaquidev.vercel.app/formacao) | UNICAP, UNIAESO e acesso ao diploma de Design de Animação |
+| [Experiência](https://atlasaquidev.vercel.app/experiencia) | Participação nos projetos, trabalho em equipe e documentação |
+| [Projetos](https://atlasaquidev.vercel.app/projetos) | Estudos de caso com telas, créditos e links |
+
+As prévias abaixo são os mesmos materiais usados nos cases do site.
+
+| ISAC Brechó · aplicativo Android | Caderno Âmbar · automação | Atlanslate · protótipo |
+| :---: | :---: | :---: |
+| [<img src="public/ASSETS/Atualizacoes/isac-inicio.jpg" width="160" alt="Tela inicial do ISAC Brechó">](https://atlasaquidev.vercel.app/projetos/bazar-solidario) | [<img src="public/ASSETS/Atualizacoes/ambar-inicio.jpg" width="300" alt="Tela inicial do Caderno Âmbar">](https://atlasaquidev.vercel.app/projetos/caderno-ambar) | [<img src="public/ASSETS/Atlanslate/inicio-design.png" width="140" alt="Protótipo do Atlanslate">](https://atlasaquidev.vercel.app/projetos/atlanslate) |
+
+## Como chegam as atualizações do GitHub
+
+~~~mermaid
+flowchart LR
+    A["Home e Sobre"] --> B["GET /api/github"]
+    B --> C["GitHub REST API"]
+    C --> B
+    B --> D["Até três repositórios públicos"]
+~~~
+
+A rota do Next.js chama GET /users/atlasaqui/repos, ordenado pela atualização, e retorna nome, descrição, linguagem, link e data. Home e Sobre exibem os resultados e oferecem nova tentativa em caso de falha. A Web Animations API também é utilizada no navegador para animar as letras da Home. As integrações dos projetos apresentados são descritas nos respectivos cases.
+
+A lista de links para entrega e o roteiro de gravação estão no [guia da atividade](ENTREGA-ATIVIDADE.md).

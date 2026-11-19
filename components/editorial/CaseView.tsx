@@ -94,10 +94,10 @@ export default function CaseView({ project }: { project: CaseStudy }) {
     ];
   return (
     <MotionConfig reducedMotion="user">
-      <Header casePage />
+      <Header />
       <main id="main" tabIndex={-1}>
         <section className="wrap case-intro">
-          <Link href="/#projetos" className="text-link">
+          <Link href="/projetos" className="text-link">
             <ArrowLeft size={16} /> Todos os projetos
           </Link>
           <div className="case-heading">

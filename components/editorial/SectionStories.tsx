@@ -118,12 +118,12 @@ export function ProcessSketch({ step }: { step: number }) {
   );
 }
 
-export function PortraitComposition() {
+export function PortraitComposition({ src = "/ASSETS/Profile/eu.jpeg" }: { src?: string } = {}) {
   const [guides, setGuides] = useState(false);
   return (
-    <div className={`about-portrait ${guides ? "portrait-composing" : ""}`}>
+    <div className={`about-portrait floating-portrait ${guides ? "portrait-composing" : ""}`}>
       <Image
-        src="/ASSETS/Profile/eu.jpeg"
+        src={src}
         alt="Victor Monteiro"
         fill
         sizes="(max-width: 700px) 80vw, 400px"

@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -45,25 +46,9 @@ export function Signature({ light = false }: { light?: boolean }) {
   );
 }
 
-export function Header({ casePage = false }: { casePage?: boolean }) {
+export function Header() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState("");
-  useEffect(() => {
-    if (casePage) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { rootMargin: "-15% 0px -65% 0px" },
-    );
-    ["projetos", "processo", "sobre", "contato"].forEach((id) => {
-      const section = document.getElementById(id);
-      if (section) observer.observe(section);
-    });
-    return () => observer.disconnect();
-  }, [casePage]);
+  const pathname = usePathname();
   useEffect(() => {
     function escape(event: KeyboardEvent) {
       if (event.key === "Escape") setOpen(false);
@@ -93,17 +78,18 @@ export function Header({ casePage = false }: { casePage?: boolean }) {
           aria-label="Navegação principal"
         >
           {[
-            ["projetos", "Projetos"],
+            ["", "Home"],
             ["sobre", "Sobre"],
             ["formacao", "Formação"],
             ["experiencia", "Experiência"],
+            ["projetos", "Projetos"],
             ["contato", "Contato"],
           ].map(([id, label]) => (
             <Link
               key={id}
               href={id === "contato" ? "/#contato" : `/${id}`}
-              className={active === id ? "active" : ""}
-              aria-current={active === id ? "location" : undefined}
+              className={(pathname === `/${id}` || (id === "projetos" && pathname.startsWith("/projetos/"))) ? "active" : ""}
+              aria-current={pathname === `/${id}` ? "page" : undefined}
               onClick={() => setOpen(false)}
             >
               {label}
@@ -322,19 +308,19 @@ function Hero() {
         </p>
         <KineticTitle />
         <p className="hero-intro">
-          Crio interfaces para web e jogos.
+          Desenvolvo aplicações web full stack e crio interfaces para jogos.
           <br />
           Da composição visual à experiência que você usa.
         </p>
         <div className="hero-actions">
-          <a className="button button-dark" href="#projetos">
+          <a className="button button-dark" href="/projetos">
             Explorar projetos <ArrowDown size={18} />
           </a>
           <a className="text-link" href="#contato">
             Vamos conversar <ArrowUpRight size={18} />
           </a>
         </div>
-        <p className="hero-footnote">UI/UX · FRONT-END · GAME UI</p>
+        <p className="hero-footnote">UI/UX · FULL STACK · GAME UI</p>
       </div>
       <Workbench />
     </section>
@@ -423,14 +409,9 @@ export function ProjectArt({
   if (project.slug === "caderno-ambar")
     return (
       <div className="project-art art-ambar">
-        <Image
-          src="/ASSETS/Atualizacoes/ambar-inicio.jpg"
-          alt="Apresentação atual do Caderno Âmbar: proposta, percurso e acesso ao treino"
-          fill
-          sizes="(max-width: 700px) 100vw, 100vw"
-          unoptimized
-        />
-        <span className="art-caption">CONSULTAR / COMPARAR / CONFERIR</span>
+        <span className="art-caption">AUTOMAÇÃO / ESTUDO DE PRODUTO</span>
+        <div className="translate-word"><span>CADERNO ÂMBAR</span><p>Veja o que mudou.<br /><em>Planeje o próximo passo.</em></p></div>
+        <div className="ambar-screen"><Image src="/ASSETS/Atualizacoes/ambar-inicio.jpg" alt="Página inicial do Caderno Âmbar" fill sizes="(max-width:700px) 50vw, 350px" /></div>
       </div>
     );
   if (project.slug === "atlanslate") return (
@@ -665,7 +646,7 @@ function OtherWork() {
 
 function About() {
   return (
-    <section id="sobre" className="about-section wrap">
+    <section className="about-section wrap">
       <PortraitComposition />
       <div className="about-copy">
         <p className="eyebrow">03 / QUEM ESTÁ POR TRÁS</p>
@@ -674,45 +655,8 @@ function About() {
           accent="Escolhi construir."
           theme="signature"
         />
-        <p className="about-lead">
-          Sou Victor, ou atlas no digital. Design e desenvolvimento são partes
-          do mesmo trabalho para mim.
-        </p>
-        <p>
-          Minha formação em Design de Animação trouxe composição, linguagem
-          visual e movimento. Hoje, em Sistemas para Internet na UNICAP,
-          aproximo esse olhar da lógica e da implementação.
-        </p>
-        <p>
-          Crio interfaces para web e jogos, com atenção ao que se vê e ao que
-          acontece quando alguém interage.
-        </p>
-        <p>
-          Também elaboro e atualizo documentos para acompanhar a evolução dos
-          projetos: quais testes foram realizados, seus resultados, o que mudou
-          em cada entrega e os próximos passos. Esses registros ajudam a equipe
-          a acompanhar o trabalho e dar continuidade ao desenvolvimento.
-        </p>
-        <div className="education">
-          <div>
-            <span>FORMAÇÃO</span>
-            <strong>Design de Animação</strong>
-            <p>UNIAESO · concluído</p>
-          </div>
-          <div>
-            <span>EM CURSO</span>
-            <strong>Sistemas para Internet</strong>
-            <p>UNICAP · Recife</p>
-          </div>
-        </div>
-        <a
-          className="text-link"
-          href="/ASSETS/Diploma/victor_william_monteiro_da_rocha_curso_tecnologico_em_design_de_animacao%20(1).pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Consultar diploma <ArrowUpRight size={16} />
-        </a>
+        <p className="about-lead">Sou Victor Monteiro, desenvolvedor full stack em Recife. Trabalho com interfaces, APIs e aplicações web.</p>
+        <Link className="text-link" href="/sobre">Sobre mim e minhas habilidades <ArrowUpRight size={16} /></Link>
       </div>
     </section>
   );
@@ -734,7 +678,9 @@ function ToolsAndLearning() {
             ["Interface", "React, Next.js, TypeScript, HTML, CSS e Tailwind"],
             ["Interação", "Framer Motion, GSAP e JavaScript"],
             ["Design", "Figma, prototipagem, composição e design tokens"],
-            ["Integração", "APIs REST, Java, JavaFX, PostgreSQL e Supabase"],
+            ["Back-end", "Java com Spring Boot e Python com FastAPI"],
+            ["APIs REST", "Desenvolvimento de endpoints, consumo e integração de APIs com o front-end"],
+            ["Banco de dados", "PostgreSQL, SQLite e Supabase"],
           ].map(([label, text]) => (
             <div key={label}>
               <dt>{label}</dt>
@@ -791,7 +737,7 @@ export function Contact() {
       <div className="wrap">
         <div className="contact-top">
           <p className="eyebrow">04 / PRÓXIMA CONVERSA</p>
-          <span>FRONT-END · UI/UX · GAME UI</span>
+          <span>FULL STACK · UI/UX · GAME UI</span>
         </div>
         <SectionHeading
           lead="Vamos construir"

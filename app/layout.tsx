@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Victor Monteiro — Design & Front-end | atlas.dev",
   description:
-    "Victor Monteiro: UI/UX, front-end e interfaces para jogos. Conheça projetos, decisões de design e implementação — do Figma ao componente.",
+    "Victor Monteiro: desenvolvimento full stack, integração de APIs, UI/UX e interfaces para jogos. Conheça projetos, decisões de design e implementação — do Figma ao componente.",
   metadataBase: new URL("https://atlasaquidev.vercel.app"),
   alternates: { canonical: "/" },
   openGraph: {

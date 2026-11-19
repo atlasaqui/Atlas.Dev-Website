@@ -4,7 +4,7 @@ import { Header, Footer } from "@/components/editorial/Studio";
 export default function NotFound() {
   return (
     <>
-      <Header casePage />
+      <Header />
       <main id="main" className="wrap not-found">
         <p className="eyebrow">404 / FORA DO CADERNO</p>
         <h1>
