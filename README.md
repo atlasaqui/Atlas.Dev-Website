@@ -1,6 +1,6 @@
 # atlas.dev — Victor Monteiro
 
-[![Atlas.dev — portfólio de Victor Monteiro com telas do Caderno Âmbar e do ISAC Brechó](docs/banner-portfolio.png)](https://atlasaquidev.vercel.app/)
+[![Atlas.dev — portfólio de Victor Monteiro de design e desenvolvimento](docs/banner-portfolio.png)](https://atlasaquidev.vercel.app/)
 
 Portfólio pessoal de UI/UX, desenvolvimento web e Game UI, publicado em https://atlasaquidev.vercel.app/.
 
