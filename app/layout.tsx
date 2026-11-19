@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Victor Monteiro — Design & Front-end",
     description:
-      "Olhar de designer. Mão no código. Interfaces para web e jogos.",
+      "Gosto de criar. E de fazer funcionar. Projetos de design, web e jogos.",
     type: "website",
   },
 };

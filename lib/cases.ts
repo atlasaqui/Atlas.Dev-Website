@@ -6,6 +6,7 @@ export type CaseStudy = {
   title: string;
   category: string;
   status: string;
+  phase?: "complete" | "progress";
   summary: string;
   role: string;
   stack: string[];
@@ -129,92 +130,63 @@ export const cases: CaseStudy[] = [
     slug: "bazar-solidario",
     number: "03",
     title: "ISAC Brechó",
-    category: "UI MOBILE / FRONT-END",
-    status: "Em desenvolvimento",
+    category: "PRODUTO DIGITAL / WEB + ANDROID",
+    status: "Concluído · entrega acadêmica",
+    phase: "complete",
     color: "#0B6676",
-    summary:
-      "Estilo acessível, identidade local e moda circular. Da marca à experiência mobile de um brechó solidário.",
-    role: "Design da interface, front-end React/TypeScript e adaptação ao contrato de cadastro do backend existente.",
-    stack: ["React", "TypeScript", "Vite", "Figma", "API REST"],
-    challenge:
-      "Apresentar uma proposta de moda circular em uma interface que funciona no celular, conectando descoberta de peças, sacola e informações sobre o projeto.",
+    summary: "Um brechó que aproxima escolhas e comunidade. Interface, catálogo, pedidos e um aplicativo Android para experimentar o percurso completo.",
+    role: "UI/UX, front-end React e TypeScript, integração com a API e colaboração nos ajustes de back-end, implantação, testes e documentação da entrega. Trabalho em equipe na Residência Tecnológica, com apoio de IA nas implementações e verificações.",
+    stack: ["React", "TypeScript", "Java / Spring Boot", "PostgreSQL", "Capacitor", "Figma", "Asaas Sandbox"],
+    challenge: "Conectar quem procura uma peça aos brechós participantes. O percurso precisava continuar depois da interface: reservar estoque, acompanhar o pedido e distinguir o aceite da loja da confirmação do pagamento.",
     decisions: [
-      {
-        title: "Uma identidade próxima de quem usa",
-        text: "A identidade oficial fornecida pela equipe reúne a palmeira, o botão e a assinatura ISAC BRECHÓ. O azul-esverdeado e o laranja da marca orientam a interface, com fundos claros e versões próprias para o cabeçalho e o ícone do aplicativo.",
-      },
-      {
-        title: "Detalhes que pertencem à marca",
-        text: "Camiseta simétrica, acessório geométrico, tênis e coração simples compartilham a mesma linguagem de traço. As categorias e informações das peças usam cores vivas com contraste, preservando a navegação inferior aprovada. A documentação no Figma separa fundamentos, componentes, seções, telas e processo, conectando decisões visuais ao comportamento da interface.",
-      },
-      {
-        title: "Navegação na mão",
-        text: "Início, catálogo, favoritos, encontros e perfil ficam na navegação inferior. Busca, filtros e sacola acompanham os principais caminhos de exploração.",
-      },
-      {
-        title: "Integração com o que já existe",
-        text: "O cadastro envia nome, e-mail e senha ao endpoint de usuários do backend Spring Boot. O cliente verifica a resposta, trata falhas e descarta a senha recebida.",
-      },
+      { title: "Identidade que acompanha o uso", text: "A marca oficial da equipe, os ícones originais do Figma e a paleta azul-esverdeada e laranja orientam o aplicativo. A apresentação usa fotografias e pequenos exercícios para ensinar favoritos, sacola e acompanhamento." },
+      { title: "Cliente e brechó, cada um no seu espaço", text: "O cliente explora, salva, monta a sacola e registra pedidos. O vendedor publica fotos, informa preço e estoque, edita anúncios e acompanha as solicitações. A API verifica permissões e vincula cada anúncio ao seu brechó." },
+      { title: "Reserva e pagamento são coisas diferentes", text: "Registrar um pedido reserva estoque no servidor. O Asaas Sandbox cria a cobrança de teste e solicita o split de 10% para a ISAC. Webhook e consulta ao provedor atualizam o pagamento, sem tratar o aceite comercial como comprovante." },
+      { title: "Da aplicação web ao celular", text: "O front-end React conversa com Spring Boot e PostgreSQL. O Capacitor embarca a interface no Android e usa a mesma API HTTPS. A entrega inclui testes automatizados, documentação técnica, publicação na Vercel e APK de homologação." },
     ],
-    result:
-      "Front-end mobile com cadastro conectado ao contrato da API e testes do cliente. Catálogo, eventos e checkout são demonstrativos; login, pedidos e vendas reais ainda não estão implementados.",
-    credits:
-      "Projeto colaborativo no repositório de Mateus-F-Moura. A marca oficial foi fornecida pela equipe. Victor Monteiro contribui com design da interface, documentação visual e front-end; o backend Spring Boot já existente é trabalho da colaboração.",
+    result: "Entrega acadêmica concluída, com site publicado, catálogo persistente e APK 0.1.1-sandbox. O fluxo foi exercitado com contas fictícias, anúncios, reserva/cancelamento de estoque e cobrança simulada. O aplicativo também foi testado em aparelho Android. Pagamentos são exclusivamente de teste; Mercado Livre e a operação comercial permanecem fora da homologação concluída.",
+    credits: "Projeto colaborativo ISAC Brechó, desenvolvido na Residência Tecnológica em parceria com o Porto Digital. Marca oficial e trabalho de design, front-end e back-end construídos em equipe. Esta página descreve a participação de Victor e a entrega demonstrativa, sem atribuir a ele toda a autoria do sistema.",
     images: [
-      { src: "/ASSETS/Bazar/marca-oficial.png", caption: "Marca oficial da equipe · assinatura, símbolo, ícone e paleta", wide: true },
-      { src: "/ASSETS/Bazar/catalogo-outubro.png", caption: "Catálogo · peças sem marcas de luxo em destaque e estados da navegação revisados" },
-      { src: "/ASSETS/Bazar/home-outubro.png", caption: "Interface atual · marca oficial e navegação mobile" },
-      { src: "/ASSETS/Bazar/apresentacao-outubro.png", caption: "Apresentação atualizada · identidade, decisões e processo no Figma", wide: true },
-      { src: "/ASSETS/Bazar/componentes-outubro.png", caption: "Componentes atualizados · marca, ícones minimalistas e estados", wide: true },
-      {
-        src: "/ASSETS/Bazar/fundamentos-outubro.png",
-        caption: "Fundamentos · marca, paleta e tipografia documentadas no Figma",
-        wide: true,
-      },
-      { src: "/ASSETS/Bazar/secoes-outubro.png", caption: "Anatomia da interface · seções e decisões de composição", wide: true },
-      { src: "/ASSETS/Bazar/processo-outubro.png", caption: "Processo · do esboço às interações e aos estados da experiência", wide: true },
+      { src: "/ASSETS/Atualizacoes/isac-inicio.jpg", caption: "Aplicação publicada · início mobile e marca oficial" },
+      { src: "/ASSETS/Atualizacoes/isac-catalogo.jpg", caption: "Catálogo conectado à API · peças e preços de demonstração" },
+      { src: "/ASSETS/Atualizacoes/isac-apresentacao.jpg", caption: "Apresentação interativa · fotografias e explicação do primeiro uso" },
+      { src: "/ASSETS/Bazar/componentes-outubro.png", caption: "Processo de design · documentação de componentes no Figma", wide: true },
     ],
     links: [
-      {
-        label: "Repositório colaborativo",
-        href: "https://github.com/Mateus-F-Moura/bazar-solidario",
-      },
-      {
-        label: "Processo e design no Figma",
-        href: "https://www.figma.com/design/UNlqj03qJ6BsaAX9sUwxiL?node-id=123-907",
-      },
+      { label: "Abrir aplicativo web", href: "https://isac-brecho.vercel.app/" },
+      { label: "Baixar APK de teste · Android", href: "/downloads/ISAC-Brecho-0.1.1-sandbox.apk" },
+      { label: "Código e documentação da equipe", href: "https://github.com/Residencia-Tecnologica-2026-2/bazar-solidario" },
+      { label: "Processo no Figma", href: "https://www.figma.com/design/UNlqj03qJ6BsaAX9sUwxiL?node-id=123-907" },
     ],
   },
   {
     slug: "caderno-ambar",
     number: "04",
     title: "Caderno Âmbar",
-    category: "APLICAÇÃO WEB / CONSULTA DE DADOS",
-    status: "Em desenvolvimento",
+    category: "PYTHON / AUTOMAÇÃO / PRODUTO WEB",
+    status: "Concluído · versão de estudo",
+    phase: "complete",
     color: "#AD875B",
-    summary: "Saiba o que mudou e o que precisa de você. Um laboratório de acompanhamento de casos com consulta, comparação e conferência.",
-    role: "Concepção do estudo, identidade visual, interface responsiva e lógica de consulta. Elaboração e atualização de documentação técnica com os testes realizados, seus resultados, as alterações de cada entrega e os próximos passos do projeto. Apoio de IA na implementação e nas verificações.",
-    stack: ["JavaScript", "Python (laboratório local)", "Requests", "Beautiful Soup", "Playwright", "HTML / CSS"],
-    challenge: "Tornar uma rotina de consulta compreensível: escolher um caso, verificar sua fonte e mostrar a diferença entre a informação anterior e a encontrada. O estudo usa casos fictícios para permitir explorar todo o percurso sem dados pessoais ou sistemas judiciais.",
+    summary: "Entender o que mudou e organizar o próximo passo. Um estudo de acompanhamento, comparação de informações e trabalho em equipe.",
+    role: "Concepção, identidade, interface e desenvolvimento do estudo com apoio de IA. Documentação do fluxo, das responsabilidades das ferramentas, dos testes e das limitações de cada etapa.",
+    stack: ["Python", "FastAPI", "Requests", "Beautiful Soup", "Playwright", "SQLite", "JavaScript"],
+    challenge: "Uma consulta só é útil quando alguém entende a diferença e sabe o que fazer depois. O projeto organiza esse caminho com treino guiado, referência anterior, comparação e providências com responsável e revisão.",
     decisions: [
-      { title: "Uma mudança que pode ser conferida", text: "O caderno começa vazio. Ao adicionar CIV-001, o registro inicial diz Aguardando agendamento. A consulta lê uma página HTML separada do laboratório e encontra Audiência agendada para 22/10 às 14h. O detalhe coloca as duas informações lado a lado." },
-      { title: "Aprender fazendo", text: "O tutorial destaca os controles e avança por 14 ações reais: adicionar, selecionar, abrir a fonte, consultar, comparar, conferir, buscar, filtrar, exportar e consultar histórico e ajuda. Não há uma sequência de cliques simulados." },
-      { title: "Cada ferramenta com uma função", text: "HTML e CSS estruturam a experiência. JavaScript organiza o estado da sessão; fetch faz a consulta HTTP e DOMParser extrai os campos do HTML. Blob gera o CSV com os itens visíveis. A documentação explica execução, comportamento e limites." },
-      { title: "Python com responsabilidades verificáveis", text: "No laboratório local, a API usa Requests para buscar o portal fictício e Beautiful Soup para extrair seus campos. Python compara o registro anterior com o atual e devolve o resultado ao painel. A rotina Playwright abre o navegador, adiciona e consulta um caso, confere o antes e depois e valida o CSV baixado. O pacote inclui código, guia de estudo e evidências de uma execução." },
-      { title: "Falhas e limites explícitos", text: "Sete testes cobrem HTTP, ausência de mudança, campos ausentes, códigos inválidos, HTTP 404, JSON inválido e ativação da consulta Python. A demonstração online continua estática e usa JavaScript; o backend Python e o robô Playwright são executados localmente pelo pacote disponível para download. Nenhuma versão consulta tribunais." },
+      { title: "Aprender usando um caso fictício", text: "A apresentação explica a proposta e leva a um treino sem conta. O guia acompanha ações reais: adicionar um caso, selecionar, consultar a fonte, comparar, conferir e exportar. O exemplo é identificado como fictício." },
+      { title: "Cada biblioteca com uma responsabilidade", text: "No laboratório, Requests busca o HTML da fonte de treino e Beautiful Soup extrai os campos. Python compara as informações. Playwright opera e verifica a interface no navegador; ele não é o transporte da consulta externa." },
+      { title: "Do laboratório à organização da equipe", text: "O código evoluiu para FastAPI e SQLite, com sessões, escritórios, carteira, versões e providências. Essa implementação de back-end é documentada separadamente da demonstração estática publicada e da versão acadêmica de equipe." },
+      { title: "Falhas também fazem parte do trabalho", text: "O piloto DataJud usa JSON e Requests, não Beautiful Soup. A documentação registra consultas e indisponibilidade externa: a aplicação preserva a referência válida e controla tentativas. Uma consulta bem-sucedida não garante disponibilidade contínua." },
     ],
-    result: "Demonstração web pública com comparação, conferência e CSV, além de um laboratório local Python com Requests, Beautiful Soup e Playwright. O robô foi executado e gerou relatório JSON, capturas, CSV e trace; os sete testes passaram. O guia explica como instalar, repetir e entender cada etapa. Os dados são fictícios e a lista da interface reinicia ao recarregar.",
-    credits: "Projeto independente de estudo de Victor Monteiro, desenvolvido com apoio de IA. Fotografias ilustrativas do Unsplash. Não representa um escritório nem uma contratação; não oferece orientação jurídica.",
+    result: "Versão de estudo publicada com apresentação e treino interativo, acompanhada de código, documentação e laboratório Python. A evolução local inclui persistência e organização de equipe; permanece um piloto em desenvolvimento, sem homologação para operação jurídica empresarial. A conferência humana continua necessária e o sistema não calcula prazos processuais automaticamente.",
+    credits: "Estudo independente de Victor Monteiro, desenvolvido com apoio de IA. Capturas de treino usam casos fictícios. A demonstração, o back-end local e o projeto acadêmico em equipe têm escopos diferentes, descritos na documentação.",
     images: [
-      { src: "/ASSETS/CadernoAmbar/inicio-hd.png", caption: "Tela inicial real · identidade, fotografia e entrada para o laboratório em alta resolução", wide: true },
-      { src: "/ASSETS/CadernoAmbar/consulta.png", caption: "Consulta executada · comparação entre o registro anterior e o encontrado na fonte", wide: true },
-      { src: "/ASSETS/CadernoAmbar/python-playwright.png", caption: "Laboratório Python · captura gerada pelo robô Playwright após verificar a resposta de Requests e Beautiful Soup", wide: true },
-      { src: "/ASSETS/CadernoAmbar/tutorial-mobile.png", caption: "Tutorial ativo no celular · cada ação é realizada pela pessoa usando o site" },
+      { src: "/ASSETS/Atualizacoes/ambar-inicio.jpg", caption: "Apresentação atual · proposta, percurso e entrada para o treino", wide: true },
+      { src: "/ASSETS/Atualizacoes/ambar-treino.jpg", caption: "Treino ativo · o guia acompanha as ações no laboratório", wide: true },
+      { src: "/ASSETS/Atualizacoes/ambar-comparacao.png", caption: "Comparação de informação · registro anterior e resultado da fonte fictícia", wide: true },
     ],
     links: [
       { label: "Abrir Caderno Âmbar", href: "https://caderno-ambar.vercel.app/" },
       { label: "Código e documentação", href: "https://github.com/atlasaqui/caderno-ambar" },
-      { label: "Baixar laboratório Python e guia", href: "/downloads/caderno-ambar-laboratorio-python.zip" },
     ],
   },
   {
@@ -260,6 +232,34 @@ export const cases: CaseStudy[] = [
     links: original("bodedono").links,
   },
 
+  {
+    slug: "atlanslate",
+    number: "06",
+    title: "Atlanslate",
+    category: "DESIGN DE PRODUTO / ANDROID / TRADUÇÃO",
+    status: "Em desenvolvimento",
+    phase: "progress",
+    color: "#3478FF",
+    summary: "Seu jogo e suas histórias, no seu idioma. Um aplicativo Android experimental para traduzir o que aparece na tela.",
+    role: "Estudo de experiência, prototipagem no Figma e integração incremental de telas e controles Android em Kotlin, com apoio de IA. Evolução da apresentação sobre uma base de tradução preexistente.",
+    stack: ["Kotlin / Android", "Figma", "OCR", "Prototipagem", "Motion design"],
+    challenge: "Tornar uma ferramenta de tradução de tela mais simples de encontrar, configurar e interromper. O ponto de partida foi acompanhar a história de One Piece Ambition; a interface precisa deixar claro o que está ativo e o que depende de preparação.",
+    decisions: [
+      { title: "Começar sem atravessar as configurações", text: "Início, Biblioteca, perfil do jogo e ajustes organizam o percurso. O APK experimental já tem integração de telas com o motor existente e um painel de sessão com comandos de iniciar, parar e ajustar." },
+      { title: "Uma identidade que convida a explorar", text: "Os estudos mais recentes do Figma combinam azul, amarelo, superfícies claras e um mascote expressivo. Estados dos botões, transições e reações são documentados como parte da experiência." },
+      { title: "Design e implementação têm etapas próprias", text: "As capturas identificam o que é protótipo Figma e o que é uma tela executada no Android. A direção visual mais recente ainda não está integralmente implementada no APK experimental." },
+      { title: "Testar no contexto em que se joga", text: "O painel de sessão foi exercitado no aparelho, com consentimento de captura solicitado pelo Android. O estado ativo do serviço não comprova precisão ou latência da tradução em todas as cenas. Voz e recursos de assistente permanecem como etapas futuras." },
+    ],
+    result: "Projeto em andamento, com protótipo visual e base Android experimental. A próxima etapa é aproximar a implementação da direção de design mais recente e ampliar a avaliação de uso, estabilidade e qualidade da tradução. Ainda não há uma versão pública final para download.",
+    credits: "Projeto independente de Victor Monteiro, com apoio de IA e motor de tradução preexistente. Imagens de One Piece aparecem no contexto do protótipo de estudo; não há afiliação ao jogo. Nome e identidade continuam em evolução.",
+    images: [
+      { src: "/ASSETS/Atlanslate/inicio-design.png", caption: "Protótipo Figma · início com a direção visual mais recente" },
+      { src: "/ASSETS/Atlanslate/biblioteca-design.png", caption: "Protótipo Figma · biblioteca e perfil de jogo" },
+      { src: "/ASSETS/Atlanslate/sessao-android.png", caption: "Implementação Android experimental · painel de sessão executado no aparelho" },
+      { src: "/ASSETS/Atlanslate/mascote-estudos.png", caption: "Estudos Figma · movimento e reações do mascote", wide: true },
+    ],
+    links: [{ label: "Explorar protótipo no Figma", href: "https://www.figma.com/proto/ZlRRRWq4gDLspG7viCvJtA/A-Translate?page-id=113%3A2&node-id=114-19&starting-point-node-id=114%3A19" }],
+  },
 ];
 
 export const complementary = PROJECTS.filter((project) =>

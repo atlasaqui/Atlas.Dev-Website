@@ -122,7 +122,7 @@ export function KineticTitle() {
         ref={root}
         id="hero-title"
         className="kinetic-title"
-        aria-label="Olhar de designer. Mão no código."
+        aria-label="Gosto de criar. E de fazer funcionar."
         onPointerOver={(event) => {
           if (event.pointerType !== "mouse" || !armed.current) return;
           if (
@@ -139,11 +139,12 @@ export function KineticTitle() {
       >
         <span aria-hidden="true">
           <span className="title-line">
-            {word("Olhar")} {word("de")}
+            {word("Gosto")} {word("de")}
           </span>
-          <span className="title-line title-design">{word("designer.")}</span>
+          <span className="title-line title-design">{word("criar.")}</span>
+          <span className="title-line title-bridge">{word("E")} {word("de")} {word("fazer")}</span>
           <span className="title-line title-code">
-            {word("Mão")} {word("no")} {word("código", "code-word")}
+            {word("funcionar", "code-word")}
             <span className="accent-text">.</span>
           </span>
         </span>

@@ -19,6 +19,7 @@ import { CONTACT_EMAIL, CONTACT_MAILTO, CONTACT_COMPOSE_URL } from "@/lib/contac
 import { Gallery } from "./Gallery";
 import { DevelopmentStatus } from "./DevelopmentStatus";
 import { KineticTitle } from "./KineticTitle";
+import { GitHubActivity } from "./GitHubActivity";
 import {
   SectionHeading,
   ProcessSketch,
@@ -93,13 +94,14 @@ export function Header({ casePage = false }: { casePage?: boolean }) {
         >
           {[
             ["projetos", "Projetos"],
-            ["processo", "Processo"],
             ["sobre", "Sobre"],
+            ["formacao", "Formação"],
+            ["experiencia", "Experiência"],
             ["contato", "Contato"],
           ].map(([id, label]) => (
             <Link
               key={id}
-              href={`${casePage ? "/" : ""}#${id}`}
+              href={id === "contato" ? "/#contato" : `/${id}`}
               className={active === id ? "active" : ""}
               aria-current={active === id ? "location" : undefined}
               onClick={() => setOpen(false)}
@@ -178,7 +180,7 @@ function Workbench() {
     {
       name: "UI mobile",
       project: cases[2],
-      images: ["/ASSETS/Bazar/home-outubro.png"],
+      images: ["/ASSETS/Atualizacoes/isac-inicio.jpg"],
     },
   ];
   const current = previews[selected];
@@ -224,7 +226,7 @@ function Workbench() {
                 ? "Uma ação principal em destaque. Navegação e recursos em regiões distintas da tela."
                 : selected === 1
                   ? "JavaFX para o desktop. React para a interface. Documentos como parte da investigação."
-                  : "Interface em React. Cadastro adaptado ao contrato existente da API."}
+                  : "React no front-end, API Spring Boot e PostgreSQL. A mesma experiência disponível na web e no Android."}
             </p>
             <Link href={`/projetos/${current.project.slug}`}>
               Conhecer as decisões <ArrowUpRight size={16} />
@@ -400,14 +402,14 @@ export function ProjectArt({
   if (project.slug === "bazar-solidario")
     return (
       <div className="project-art art-bazar">
-        <span className="art-caption">MODA CIRCULAR / IDENTIDADE LOCAL</span>
+        <span className="art-caption">ENTREGA CONCLUÍDA / WEB + APK</span>
         <div className="bazar-word" aria-hidden="true">
           <Image className="isac-case-logo" src="/ASSETS/Bazar/isac-oficial.svg" alt="" width={498} height={321} />
-          <p>Estilo de perto.<br /><em>Histórias que continuam.</em></p>
+          <p>Na web. No Android.<br /><em>Escolhas com propósito.</em></p>
         </div>
         <div className="bazar-phone">
           <Image
-            src="/ASSETS/Bazar/home-outubro.png"
+            src="/ASSETS/Atualizacoes/isac-inicio.jpg"
             alt="Tela inicial mobile do ISAC Brechó"
             fill
             sizes="(max-width: 600px) 36vw, 220px"
@@ -422,8 +424,8 @@ export function ProjectArt({
     return (
       <div className="project-art art-ambar">
         <Image
-          src="/ASSETS/CadernoAmbar/inicio-hd.png"
-          alt="Tela inicial real do Caderno Âmbar, com apresentação, fotografia do escritório e acesso ao laboratório"
+          src="/ASSETS/Atualizacoes/ambar-inicio.jpg"
+          alt="Apresentação atual do Caderno Âmbar: proposta, percurso e acesso ao treino"
           fill
           sizes="(max-width: 700px) 100vw, 100vw"
           unoptimized
@@ -431,6 +433,13 @@ export function ProjectArt({
         <span className="art-caption">CONSULTAR / COMPARAR / CONFERIR</span>
       </div>
     );
+  if (project.slug === "atlanslate") return (
+    <div className="project-art art-translate">
+      <span className="art-caption">TRADUÇÃO DE TELA / ESTUDO DE PRODUTO</span>
+      <div className="translate-word"><span>ATLANSLATE</span><p>Seu jogo.<br /><em>No seu idioma.</em></p><small>Direção visual em desenvolvimento</small></div>
+      <div className="translate-phone"><Image src="/ASSETS/Atlanslate/inicio-design.png" alt="Protótipo atual do Atlanslate no Figma, com mascote e início da tradução" fill sizes="(max-width:700px) 40vw, 240px" /></div>
+    </div>
+  );
   return (
     <div className="project-art art-bode" tabIndex={compact ? 0 : undefined} aria-label={compact ? "Prévia do projeto Bode do Nô" : undefined}>
       <Image
@@ -444,11 +453,10 @@ export function ProjectArt({
   );
 }
 
-function ProjectCard({ project }: { project: CaseStudy }) {
+export function ProjectCard({ project }: { project: CaseStudy }) {
   return (
     <Reveal className={`project-card project-${project.slug}`}>
-      {project.slug === "bazar-solidario" && <DevelopmentStatus />}
-      {project.slug === "caderno-ambar" && <DevelopmentStatus variant="ambar" />}
+      {project.phase === "progress" && <DevelopmentStatus />}
       <Link
         href={`/projetos/${project.slug}`}
         className="project-cover-link"
@@ -477,7 +485,7 @@ function ProjectCard({ project }: { project: CaseStudy }) {
       </div>
       <p className="project-summary">{project.summary}</p>
       <div className="project-meta">
-        <span>{project.slug === "bazar-solidario" ? "Projeto colaborativo" : project.status}</span>
+        <span>{project.status}</span>
         <span>{project.stack.slice(0, 2).join(" / ")}</span>
       </div>
     </Reveal>
@@ -877,6 +885,7 @@ export default function Studio() {
         <OtherWork />
         <About />
         <ToolsAndLearning />
+        <GitHubActivity />
         <Contact />
       </main>
       <Footer />
